@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
     <Head>
-      <title>Swagstoar</title>
+      <title>Swagstoar - free swag!</title>
       <meta name="description" content="Swagstoar.vercel.app - wear code t-shirts and more" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
