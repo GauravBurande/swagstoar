@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-const Tshirts = () => {
+const Stickers = () => {
   return (
     <div>
       <section className="text-gray-400 bg-gray-900 body-font">
@@ -10,10 +10,10 @@ const Tshirts = () => {
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-2xl">
             <Link href={'/product/docker-kill'}>
                 <a className="block relative h-55 rounded overflow-hidden">
-                  <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://cdn.shopify.com/s/files/1/0437/7057/7061/products/40fde45bbac3dd55ea69ddc14a2152bc_1024x1024@2x.jpg?v=1597721564" />
+                  <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://stickerdise.com/wp-content/uploads/2022/04/SINGLE464.webp" />
                 </a>
                 <div className="mt-4">
-                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">TSHIRTS</h3>
+                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">STICKERS</h3>
                   <h2 className="text-white title-font text-lg font-medium">Docker Kill - Unisex Jersey Short Sleeve Tee</h2>
                   <p className="mt-1">$18.99</p>
                 </div>
@@ -22,10 +22,10 @@ const Tshirts = () => {
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-2xl">
             <Link href={'/product/docker-kill'}>
                 <a className="block relative h-55 rounded overflow-hidden">
-                  <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://cdn.shopify.com/s/files/1/0437/7057/7061/products/40fde45bbac3dd55ea69ddc14a2152bc_1024x1024@2x.jpg?v=1597721564" />
+                  <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://stickerdise.com/wp-content/uploads/2022/04/SINGLE464.webp" />
                 </a>
                 <div className="mt-4">
-                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">TSHIRTS</h3>
+                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">STICKERS</h3>
                   <h2 className="text-white title-font text-lg font-medium">Docker Kill - Unisex Jersey Short Sleeve Tee</h2>
                   <p className="mt-1">$18.99</p>
                 </div>
@@ -34,10 +34,10 @@ const Tshirts = () => {
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-2xl">
             <Link href={'/product/docker-kill'}>
                 <a className="block relative h-55 rounded overflow-hidden">
-                  <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://cdn.shopify.com/s/files/1/0437/7057/7061/products/40fde45bbac3dd55ea69ddc14a2152bc_1024x1024@2x.jpg?v=1597721564" />
+                  <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://stickerdise.com/wp-content/uploads/2022/04/SINGLE464.webp" />
                 </a>
                 <div className="mt-4">
-                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">TSHIRTS</h3>
+                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">STICKERS</h3>
                   <h2 className="text-white title-font text-lg font-medium">Docker Kill - Unisex Jersey Short Sleeve Tee</h2>
                   <p className="mt-1">$18.99</p>
                 </div>
@@ -46,10 +46,10 @@ const Tshirts = () => {
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-2xl">
             <Link href={'/product/docker-kill'}>
                 <a className="block relative h-55 rounded overflow-hidden">
-                  <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://cdn.shopify.com/s/files/1/0437/7057/7061/products/40fde45bbac3dd55ea69ddc14a2152bc_1024x1024@2x.jpg?v=1597721564" />
+                  <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://stickerdise.com/wp-content/uploads/2022/04/SINGLE464.webp" />
                 </a>
                 <div className="mt-4">
-                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">TSHIRTS</h3>
+                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">STICKERS</h3>
                   <h2 className="text-white title-font text-lg font-medium">Docker Kill - Unisex Jersey Short Sleeve Tee</h2>
                   <p className="mt-1">$18.99</p>
                 </div>
@@ -58,10 +58,10 @@ const Tshirts = () => {
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-2xl">
             <Link href={'/product/docker-kill'}>
                 <a className="block relative h-55 rounded overflow-hidden">
-                  <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://cdn.shopify.com/s/files/1/0437/7057/7061/products/40fde45bbac3dd55ea69ddc14a2152bc_1024x1024@2x.jpg?v=1597721564" />
+                  <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://stickerdise.com/wp-content/uploads/2022/04/SINGLE464.webp" />
                 </a>
                 <div className="mt-4">
-                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">TSHIRTS</h3>
+                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">STICKERS</h3>
                   <h2 className="text-white title-font text-lg font-medium">Docker Kill - Unisex Jersey Short Sleeve Tee</h2>
                   <p className="mt-1">$18.99</p>
                 </div>
@@ -70,10 +70,10 @@ const Tshirts = () => {
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-2xl">
             <Link href={'/product/docker-kill'}>
                 <a className="block relative h-55 rounded overflow-hidden">
-                  <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://cdn.shopify.com/s/files/1/0437/7057/7061/products/40fde45bbac3dd55ea69ddc14a2152bc_1024x1024@2x.jpg?v=1597721564" />
+                  <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://stickerdise.com/wp-content/uploads/2022/04/SINGLE464.webp" />
                 </a>
                 <div className="mt-4">
-                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">TSHIRTS</h3>
+                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">STICKERS</h3>
                   <h2 className="text-white title-font text-lg font-medium">Docker Kill - Unisex Jersey Short Sleeve Tee</h2>
                   <p className="mt-1">$18.99</p>
                 </div>
@@ -82,10 +82,10 @@ const Tshirts = () => {
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-2xl">
             <Link href={'/product/docker-kill'}>
                 <a className="block relative h-55 rounded overflow-hidden">
-                  <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://cdn.shopify.com/s/files/1/0437/7057/7061/products/40fde45bbac3dd55ea69ddc14a2152bc_1024x1024@2x.jpg?v=1597721564" />
+                  <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://stickerdise.com/wp-content/uploads/2022/04/SINGLE464.webp" />
                 </a>
                 <div className="mt-4">
-                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">TSHIRTS</h3>
+                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">STICKERS</h3>
                   <h2 className="text-white title-font text-lg font-medium">Docker Kill - Unisex Jersey Short Sleeve Tee</h2>
                   <p className="mt-1">$18.99</p>
                 </div>
@@ -94,10 +94,10 @@ const Tshirts = () => {
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-2xl">
             <Link href={'/product/docker-kill'}>
                 <a className="block relative h-55 rounded overflow-hidden">
-                  <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://cdn.shopify.com/s/files/1/0437/7057/7061/products/40fde45bbac3dd55ea69ddc14a2152bc_1024x1024@2x.jpg?v=1597721564" />
+                  <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://stickerdise.com/wp-content/uploads/2022/04/SINGLE464.webp" />
                 </a>
                 <div className="mt-4">
-                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">TSHIRTS</h3>
+                  <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">STICKERS</h3>
                   <h2 className="text-white title-font text-lg font-medium">Docker Kill - Unisex Jersey Short Sleeve Tee</h2>
                   <p className="mt-1">$18.99</p>
                 </div>
@@ -110,4 +110,4 @@ const Tshirts = () => {
   )
 }
 
-export default Tshirts
+export default Stickers
