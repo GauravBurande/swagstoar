@@ -5,11 +5,11 @@ const Tshirts = () => {
   return (
     <div>
       <section className="text-gray-400 bg-gray-900 body-font">
-        <div className="container px-5 py-24 mx-auto">
+        <div className="container px-5 py-12 mx-auto">
           <div className="flex flex-wrap -m-4">
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-2xl">
             <Link href={'/product/docker-kill'}>
-                <a className="block relative h-55 rounded overflow-hidden">
+                <a className="block static h-55 rounded overflow-hidden">
                   <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://cdn.shopify.com/s/files/1/0437/7057/7061/products/40fde45bbac3dd55ea69ddc14a2152bc_1024x1024@2x.jpg?v=1597721564" />
                 </a>
                 <div className="mt-4">
@@ -21,7 +21,7 @@ const Tshirts = () => {
               </div>
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-2xl">
             <Link href={'/product/docker-kill'}>
-                <a className="block relative h-55 rounded overflow-hidden">
+                <a className="block static h-55 rounded overflow-hidden">
                   <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://cdn.shopify.com/s/files/1/0437/7057/7061/products/40fde45bbac3dd55ea69ddc14a2152bc_1024x1024@2x.jpg?v=1597721564" />
                 </a>
                 <div className="mt-4">
@@ -33,7 +33,7 @@ const Tshirts = () => {
               </div>
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-2xl">
             <Link href={'/product/docker-kill'}>
-                <a className="block relative h-55 rounded overflow-hidden">
+                <a className="block static h-55 rounded overflow-hidden">
                   <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://cdn.shopify.com/s/files/1/0437/7057/7061/products/40fde45bbac3dd55ea69ddc14a2152bc_1024x1024@2x.jpg?v=1597721564" />
                 </a>
                 <div className="mt-4">
@@ -45,7 +45,7 @@ const Tshirts = () => {
               </div>
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-2xl">
             <Link href={'/product/docker-kill'}>
-                <a className="block relative h-55 rounded overflow-hidden">
+                <a className="block static h-55 rounded overflow-hidden">
                   <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://cdn.shopify.com/s/files/1/0437/7057/7061/products/40fde45bbac3dd55ea69ddc14a2152bc_1024x1024@2x.jpg?v=1597721564" />
                 </a>
                 <div className="mt-4">
@@ -57,7 +57,7 @@ const Tshirts = () => {
               </div>
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-2xl">
             <Link href={'/product/docker-kill'}>
-                <a className="block relative h-55 rounded overflow-hidden">
+                <a className="block static h-55 rounded overflow-hidden">
                   <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://cdn.shopify.com/s/files/1/0437/7057/7061/products/40fde45bbac3dd55ea69ddc14a2152bc_1024x1024@2x.jpg?v=1597721564" />
                 </a>
                 <div className="mt-4">
@@ -69,7 +69,7 @@ const Tshirts = () => {
               </div>
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-2xl">
             <Link href={'/product/docker-kill'}>
-                <a className="block relative h-55 rounded overflow-hidden">
+                <a className="block static h-55 rounded overflow-hidden">
                   <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://cdn.shopify.com/s/files/1/0437/7057/7061/products/40fde45bbac3dd55ea69ddc14a2152bc_1024x1024@2x.jpg?v=1597721564" />
                 </a>
                 <div className="mt-4">
@@ -81,7 +81,7 @@ const Tshirts = () => {
               </div>
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-2xl">
             <Link href={'/product/docker-kill'}>
-                <a className="block relative h-55 rounded overflow-hidden">
+                <a className="block static h-55 rounded overflow-hidden">
                   <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://cdn.shopify.com/s/files/1/0437/7057/7061/products/40fde45bbac3dd55ea69ddc14a2152bc_1024x1024@2x.jpg?v=1597721564" />
                 </a>
                 <div className="mt-4">
@@ -93,7 +93,7 @@ const Tshirts = () => {
               </div>
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-2xl">
             <Link href={'/product/docker-kill'}>
-                <a className="block relative h-55 rounded overflow-hidden">
+                <a className="block static h-55 rounded overflow-hidden">
                   <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://cdn.shopify.com/s/files/1/0437/7057/7061/products/40fde45bbac3dd55ea69ddc14a2152bc_1024x1024@2x.jpg?v=1597721564" />
                 </a>
                 <div className="mt-4">
