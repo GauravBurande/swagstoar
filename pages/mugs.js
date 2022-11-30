@@ -8,10 +8,10 @@ const Mugs = () => {
         <div className="container px-5 py-12 mx-auto">
           <div className="flex flex-wrap -m-4">
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-2xl">
-            <Link href={'/product/docker-kill'}>
-                <a className="block static h-55 rounded overflow-hidden">
+            <Link href='/product/docker-kill'>
+                <div className="block static h-55 rounded overflow-hidden">
                   <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://m.media-amazon.com/images/I/41rUXtLG7lL._SX425_.jpg" />
-                </a>
+                </div>
                 <div className="mt-4">
                   <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">MUGS</h3>
                   <h2 className="text-white title-font text-lg font-medium">Docker Kill - Unisex Jersey Short Sleeve Tee</h2>
@@ -20,10 +20,10 @@ const Mugs = () => {
             </Link>
               </div>
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-2xl">
-            <Link href={'/product/docker-kill'}>
-                <a className="block static h-55 rounded overflow-hidden">
+            <Link href='/product/docker-kill'>
+                <div className="block static h-55 rounded overflow-hidden">
                   <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://m.media-amazon.com/images/I/41rUXtLG7lL._SX425_.jpg" />
-                </a>
+                </div>
                 <div className="mt-4">
                   <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">MUGS</h3>
                   <h2 className="text-white title-font text-lg font-medium">Docker Kill - Unisex Jersey Short Sleeve Tee</h2>
@@ -32,10 +32,10 @@ const Mugs = () => {
             </Link>
               </div>
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-2xl">
-            <Link href={'/product/docker-kill'}>
-                <a className="block static h-55 rounded overflow-hidden">
+            <Link href='/product/docker-kill'>
+                <div className="block static h-55 rounded overflow-hidden">
                   <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://m.media-amazon.com/images/I/41rUXtLG7lL._SX425_.jpg" />
-                </a>
+                </div>
                 <div className="mt-4">
                   <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">MUGS</h3>
                   <h2 className="text-white title-font text-lg font-medium">Docker Kill - Unisex Jersey Short Sleeve Tee</h2>
@@ -44,10 +44,10 @@ const Mugs = () => {
             </Link>
               </div>
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-2xl">
-            <Link href={'/product/docker-kill'}>
-                <a className="block static h-55 rounded overflow-hidden">
+            <Link href='/product/docker-kill'>
+                <div className="block static h-55 rounded overflow-hidden">
                   <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://m.media-amazon.com/images/I/41rUXtLG7lL._SX425_.jpg" />
-                </a>
+                </div>
                 <div className="mt-4">
                   <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">MUGS</h3>
                   <h2 className="text-white title-font text-lg font-medium">Docker Kill - Unisex Jersey Short Sleeve Tee</h2>
@@ -56,10 +56,10 @@ const Mugs = () => {
             </Link>
               </div>
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-2xl">
-            <Link href={'/product/docker-kill'}>
-                <a className="block static h-55 rounded overflow-hidden">
+            <Link href='/product/docker-kill'>
+                <div className="block static h-55 rounded overflow-hidden">
                   <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://m.media-amazon.com/images/I/41rUXtLG7lL._SX425_.jpg" />
-                </a>
+                </div>
                 <div className="mt-4">
                   <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">MUGS</h3>
                   <h2 className="text-white title-font text-lg font-medium">Docker Kill - Unisex Jersey Short Sleeve Tee</h2>
@@ -68,10 +68,10 @@ const Mugs = () => {
             </Link>
               </div>
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-2xl">
-            <Link href={'/product/docker-kill'}>
-                <a className="block static h-55 rounded overflow-hidden">
+            <Link href='/product/docker-kill'>
+                <div className="block static h-55 rounded overflow-hidden">
                   <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://m.media-amazon.com/images/I/41rUXtLG7lL._SX425_.jpg" />
-                </a>
+                </div>
                 <div className="mt-4">
                   <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">MUGS</h3>
                   <h2 className="text-white title-font text-lg font-medium">Docker Kill - Unisex Jersey Short Sleeve Tee</h2>
@@ -80,10 +80,10 @@ const Mugs = () => {
             </Link>
               </div>
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-2xl">
-            <Link href={'/product/docker-kill'}>
-                <a className="block static h-55 rounded overflow-hidden">
+            <Link href='/product/docker-kill'>
+                <div className="block static h-55 rounded overflow-hidden">
                   <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://m.media-amazon.com/images/I/41rUXtLG7lL._SX425_.jpg" />
-                </a>
+                </div>
                 <div className="mt-4">
                   <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">MUGS</h3>
                   <h2 className="text-white title-font text-lg font-medium">Docker Kill - Unisex Jersey Short Sleeve Tee</h2>
@@ -92,10 +92,10 @@ const Mugs = () => {
             </Link>
               </div>
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-2xl">
-            <Link href={'/product/docker-kill'}>
-                <a className="block static h-55 rounded overflow-hidden">
+            <Link href='/product/docker-kill'>
+                <div className="block static h-55 rounded overflow-hidden">
                   <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://m.media-amazon.com/images/I/41rUXtLG7lL._SX425_.jpg" />
-                </a>
+                </div>
                 <div className="mt-4">
                   <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">MUGS</h3>
                   <h2 className="text-white title-font text-lg font-medium">Docker Kill - Unisex Jersey Short Sleeve Tee</h2>
