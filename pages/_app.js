@@ -2,7 +2,7 @@ import '../styles/globals.css'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import Head from 'next/head'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
 function MyApp({ Component, pageProps }) {
 
@@ -13,20 +13,31 @@ function MyApp({ Component, pageProps }) {
     try {
       if (localStorage.getItem('cart')) {
         setCart(JSON.parse(localStorage.getItem('cart')))
+        saveCart(JSON.parse(localStorage.getItem('cart')))
       }
     } catch (error) {
       localStorage.clear()
     }
   }, [])
 
+  const cartRef = useRef()
+
+  const toggleCart = () => {
+    if (cartRef.current.classList.contains('translate-x-full')) {
+      cartRef.current.classList.remove('translate-x-full')
+    } else {
+      cartRef.current.classList.add('translate-x-full')
+    }
+  }
+
   const saveCart = (myCart) => {
     localStorage.setItem('cart', JSON.stringify(myCart))
     let subt = 0;
     let keys = Object.keys(myCart)
-    for (let i = 0; i<keys.length; i++) {
+    for (let i = 0; i < keys.length; i++) {
       subt += myCart[keys[i]].price * myCart[keys[i]].qty
     }
-    setSubTotal(subt)
+    setSubTotal(Math.round(subt))
   }
 
   const addToCart = (itemCode, qty, price, name, size, variant) => {
@@ -51,7 +62,7 @@ function MyApp({ Component, pageProps }) {
       newCart[itemCode].qty = cart[itemCode].qty - qty
     }
     if (newCart[itemCode].qty <= 0) {
-      console.log(newCart[itemCode]) 
+      console.log(newCart[itemCode])
       delete newCart[itemCode]
     }
     setCart(newCart)
@@ -66,8 +77,8 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navbar cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart = {clearCart} subTotal={subTotal} />
-      <Component cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart = {clearCart} subTotal={subTotal} {...pageProps} />
+      <Navbar cart={cart} toggleCart={toggleCart} cartRef={cartRef} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} />
+      <Component cart={cart} toggleCart={toggleCart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} {...pageProps} />
       <Footer />
     </>
   )

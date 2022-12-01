@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 
-const Post = ({ addToCart }) => {
+const Post = ({ addToCart, toggleCart }) => {
   const router = useRouter()
   const { slug } = router.query
 
@@ -101,7 +101,7 @@ const Post = ({ addToCart }) => {
               <div className="flex">
                 <span className="title-font font-medium text-2xl text-white">$18.99</span>
                 <button className="flex text-sm ml-auto text-white bg-purple-500 border-0 py-2 px-2 md:px-6 focus:outline-none hover:bg-purple-600 rounded">Buy Now</button>
-                <button onClick={() => { addToCart(slug, 1, 18.99, 'Docker Kill', 'XL', 'red') }} className="flex text-sm ml-4 text-white bg-purple-500 border-0 py-2 px-2 md:px-6 focus:outline-none hover:bg-purple-600 rounded">Add to Cart</button>
+                <button onClick={() => { addToCart(slug, 1, 18.99, 'Docker Kill', 'XL', 'red'), toggleCart() }} className="flex text-sm ml-4 text-white bg-purple-500 border-0 py-2 px-2 md:px-6 focus:outline-none hover:bg-purple-600 rounded">Add to Cart</button>
                 <button className="rounded-full w-10 h-10 bg-gray-800 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
                   <svg fill="currentColor" stroke-line-cap="round" stroke-line-join="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
                     <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
@@ -110,7 +110,7 @@ const Post = ({ addToCart }) => {
               </div>
               <div className="flex flex-col my-5">
                 <div className="pin flex space-x-4 text-sm">
-                  <input onChange={onChangePin} placeholder=' enteryour pincode' type="text" id="footer-field" name="footer-field"
+                  <input onChange={onChangePin} placeholder=' enter your pincode' type="text" id="footer-field" name="footer-field"
                     className="w-1/2 bg-gray-800 rounded border bg-opacity-40 border-gray-700 focus:bg-transparent focus:ring-2 focus:ring-purple-900 focus:border-purple-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                   <button onClick={checkPin} className='flex ml-auto text-white bg-purple-500 border-0 items-center py-2 px-6 focus:outline-none hover:bg-purple-600 rounded'>Check</button>
                 </div>
