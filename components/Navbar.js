@@ -5,6 +5,7 @@ import { GiShoppingBag } from 'react-icons/gi';
 import { GrClose } from 'react-icons/gr';
 import { BsFillBagCheckFill } from 'react-icons/bs';
 import { AiFillPlusCircle, AiFillMinusCircle } from 'react-icons/ai';
+import { MdAccountCircle } from 'react-icons/md';
 
 const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal, toggleCart, cartRef }) => {
 
@@ -25,15 +26,20 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal, toggleCa
         </ul>
       </div>
 
-      <div onClick={toggleCart} className="cart absolute right-0 top-7 mx-8">
-        <GiShoppingBag className='text-2xl cursor-pointer' />
+
+
+      <div className="cart absolute right-0 top-8 mx-8 flex items-center space-x-3">
+        <Link href={'/signin'}>
+          <MdAccountCircle className='md:text-2xl cursor-pointer' />
+        </Link>
+        <GiShoppingBag onClick={toggleCart} className='md:text-2xl cursor-pointer' />
       </div>
 
       <div ref={cartRef} className={`sideCart sm:w-1/2 md:w-1/3 h-[100vh] absolute top-0 right-0 shadow-lg bg-gray-800 px-14 py-20 transform transition-transform translate-x-full`}>
-        <h2 className='text-xl font-bold py-5'>Shopping Cart</h2>
+        <h2 className='text-xl font-bold py-5 text-purple-700'>Shopping Cart</h2>
         <span onClick={toggleCart} className="absolute top-8 right-8 cursor-pointer text-xl text-white"><GrClose /></span>
         <ol>
-          {Object.keys(cart) == 0 && <div className='my-4'>
+          {Object.keys(cart) == 0 && <div className='my-4 text-white'>
             Your cart is empty.
           </div>}
 
@@ -51,7 +57,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal, toggleCa
               </li>
             })}
           </div>
-          <div className="total font-bold mb-4">SubTotal: ${subTotal}</div>
+          <div className="total font-bold mb-4">Amount: ${subTotal}</div>
 
         </ol>
         <div className="flex">
