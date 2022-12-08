@@ -78,7 +78,10 @@ const Post = ({ addToCart, toggleCart, product }) => {
               <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-800 mb-5">
                 <div className="flex">
                   <span className="mr-3">Color</span>
-                  <button className={`border-2 border-gray-800 bg-${product.color == 'black' ? product.color : product.color + '-500'} rounded-full w-6 h-6 focus:outline-none`}></button>
+                  {product.color == 'red' && <button className={`border-2 border-gray-800 bg-red-500 rounded-full w-6 h-6 focus:outline-none`}></button>}
+                  {product.color == 'blue' && <button className={`border-2 border-gray-800 bg-blue-500 rounded-full w-6 h-6 focus:outline-none`}></button>}
+                  {product.color == 'black' && <button className={`border-2 border-gray-800 bg-black rounded-full w-6 h-6 focus:outline-none`}></button>}
+                  {product.color == 'white' && <button className={`border-2 border-gray-800 bg-white rounded-full w-6 h-6 focus:outline-none`}></button>}
                 </div>
                 <div className="flex ml-6 items-center">
                   <span className="mr-3">Choose Size</span>
