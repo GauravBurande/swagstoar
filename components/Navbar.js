@@ -35,7 +35,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal, toggleCa
         <GiShoppingBag onClick={toggleCart} className='md:text-2xl cursor-pointer' />
       </div>
 
-      <div ref={cartRef} className={`sideCart sm:w-1/2 md:w-1/3 h-[100vh] absolute top-0 right-0 shadow-lg bg-gray-800 px-14 py-20 transform transition-transform translate-x-full`}>
+      <div ref={cartRef} className={`sideCart sm:w-1/2 md:w-1/3 h-[100vh] fixed top-0 right-0 shadow-lg bg-gray-800 px-14 py-20 transform transition-transform translate-x-full`}>
         <h2 className='text-xl font-bold py-5 text-purple-700'>Shopping Cart</h2>
         <span onClick={toggleCart} className="absolute top-8 right-8 cursor-pointer text-xl text-white"><GrClose /></span>
         <ol>
