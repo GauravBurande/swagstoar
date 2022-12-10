@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import Product from "../../models/Product"
 import mongoose from "mongoose";
 import { useRouter } from 'next/router';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const Post = ({ addToCart, toggleCart, product }) => {
+const Post = ({ addToCart, toggleCart, product, buyNow }) => {
 
   const router = useRouter()
   const { slug } = router.query
@@ -11,12 +13,34 @@ const Post = ({ addToCart, toggleCart, product }) => {
   const [pin, setPin] = useState()
   const [service, setService] = useState()
 
+
+
   const checkPin = async () => {
     let pins = await fetch('http://localhost:3000/api/pincode')
     let pinJson = await pins.json()
     if (pinJson.includes(parseInt(pin))) {
+      toast('Our services are available at your place.', {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
       setService(true)
     } else {
+      toast.error('Sorry, we do not deliver to this place for now.', {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
       setService(false)
     }
 
@@ -28,9 +52,22 @@ const Post = ({ addToCart, toggleCart, product }) => {
   const onChangePin = (e) => {
     setPin(e.target.value)
   }
+
   return (
     <div>
       <section className="text-gray-400 bg-gray-900 body-font overflow-hidden">
+        <ToastContainer
+          position="bottom-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
         <div className="container px-5 py-24 mx-auto">
           <div className="lg:w-4/5 mx-auto flex flex-wrap">
             <img alt={product.title} className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src={product.image} />
@@ -56,7 +93,7 @@ const Post = ({ addToCart, toggleCart, product }) => {
                   </svg>
                   <span className="ml-3">4 Reviews</span>
                 </span>
-                <span className="flex ml-3 pl-3 py-2 border-l-2 border-gray-800 text-gray-500 space-x-2">
+                {/* <span className="flex ml-3 pl-3 py-2 border-l-2 border-gray-800 text-gray-500 space-x-2">
                   <a>
                     <svg fill="currentColor" stroke-line-cap="round" stroke-line-join="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
                       <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
@@ -72,7 +109,7 @@ const Post = ({ addToCart, toggleCart, product }) => {
                       <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
                     </svg>
                   </a>
-                </span>
+                </span> */}
               </div>
               <p className="leading-relaxed">{product.description}</p>
               <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-800 mb-5">
@@ -104,13 +141,13 @@ const Post = ({ addToCart, toggleCart, product }) => {
 
               <div className="flex">
                 <span className="title-font font-medium text-2xl text-white">${product.price}.00</span>
-                <button className="flex text-sm ml-auto text-white bg-purple-500 border-0 py-2 px-2 md:px-6 focus:outline-none hover:bg-purple-600 rounded">Buy Now</button>
-                <button onClick={() => { addToCart(slug, 1, product.price, product.title, 'XL', product.color), toggleCart() }} className="flex text-sm ml-4 text-white bg-purple-500 border-0 py-2 px-2 md:px-6 focus:outline-none hover:bg-purple-600 rounded">Add to Cart</button>
-                <button className="rounded-full w-10 h-10 bg-gray-800 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
+                <button onClick={() => { buyNow(slug, 1, product.price, product.title, product.size, product.color) }} className="flex text-sm ml-auto text-white bg-purple-500 border-0 py-2 px-2 md:px-6 focus:outline-none hover:bg-purple-600 rounded">Buy Now</button>
+                <button onClick={() => { addToCart(slug, 1, product.price, product.title, product.size, product.color), toggleCart() }} className="flex text-sm ml-4 text-white bg-purple-500 border-0 py-2 px-2 md:px-6 focus:outline-none hover:bg-purple-600 rounded">Add to Cart</button>
+                {/* <button className="rounded-full w-10 h-10 bg-gray-800 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
                   <svg fill="currentColor" stroke-line-cap="round" stroke-line-join="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
                     <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
                   </svg>
-                </button>
+                </button> */}
               </div>
               <div className="flex flex-col my-5">
                 <div className="pin flex space-x-4 text-sm">
@@ -118,14 +155,14 @@ const Post = ({ addToCart, toggleCart, product }) => {
                     className="w-1/2 bg-gray-800 rounded border bg-opacity-40 border-gray-700 focus:bg-transparent focus:ring-2 focus:ring-purple-900 focus:border-purple-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                   <button onClick={checkPin} className='flex ml-auto text-white bg-purple-500 border-0 items-center py-2 px-6 focus:outline-none hover:bg-purple-600 rounded'>Check</button>
                 </div>
-                <div className=" md:mx-0 my-5 text-sm">
+                {/* <div className=" md:mx-0 w-fit my-5 text-sm">
                   {service && service != null && <div className="bg-white text-green-500 px-4 py-2 rounded">
                     Our services are available at your place.
                   </div>}
                   {!service && service != null && <div className="bg-white text-red-500 px-4 py-2 rounded">
-                    Sorry, we do not deliver to this pincode.
+                    Sorry, we do not deliver to this pincode for now.
                   </div>}
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

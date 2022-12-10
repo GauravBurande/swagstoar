@@ -9,19 +9,19 @@ const Footer = () => {
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap md:text-left text-center order-first">
             <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3">CATEGORIES</h2>
+              <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3">SHOP</h2>
               <nav className="list-none mb-10">
                 <li>
-                  <a className="text-gray-400 hover:text-white">First Link</a>
+                  <Link href={'/tshirts'} className="text-gray-400 hover:text-white">Tshirts</Link>
                 </li>
                 <li>
-                  <a className="text-gray-400 hover:text-white">Second Link</a>
+                  <Link href={'/hoodies'} className="text-gray-400 hover:text-white">Hoodies</Link>
                 </li>
                 <li>
-                  <a className="text-gray-400 hover:text-white">Third Link</a>
+                  <Link href={'/stickers'} className="text-gray-400 hover:text-white">Stickers</Link>
                 </li>
                 <li>
-                  <a className="text-gray-400 hover:text-white">Fourth Link</a>
+                  <Link href={'/mugs'} className="text-gray-400 hover:text-white">Mugs</Link>
                 </li>
               </nav>
             </div>
@@ -43,7 +43,7 @@ const Footer = () => {
               </nav>
             </div>
             <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3">CATEGORIES</h2>
+              <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3">POLICY</h2>
               <nav className="list-none mb-10">
                 <li>
                   <a className="text-gray-400 hover:text-white">First Link</a>

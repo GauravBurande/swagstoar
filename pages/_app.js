@@ -3,8 +3,13 @@ import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import Head from 'next/head'
 import { useEffect, useState, useRef } from 'react'
+import { useRouter } from 'next/router'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function MyApp({ Component, pageProps }) {
+
+  const router = useRouter()
 
   const [cart, setCart] = useState({})
   const [subTotal, setSubTotal] = useState(0)
@@ -49,11 +54,33 @@ function MyApp({ Component, pageProps }) {
     }
     setCart(newCart)
     saveCart(newCart)
+
+    toast('Product added to the cart.', {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
   }
 
   const clearCart = () => {
     setCart({})
     saveCart({})
+
+    toast('Products are removed from the cart.', {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
   }
 
   const removeFromCart = (itemCode, qty) => {
@@ -69,6 +96,14 @@ function MyApp({ Component, pageProps }) {
     saveCart(newCart)
   }
 
+  const buyNow = (itemCode, qty, price, name, size, variant) => {
+    let newCart = {};
+    newCart[itemCode] = { qty: 1, price, name, size, variant }
+    setCart(newCart)
+    saveCart(newCart)
+    router.push('/checkout')
+  }
+
   return (
     <>
       <Head>
@@ -78,7 +113,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
       <Navbar cart={cart} toggleCart={toggleCart} cartRef={cartRef} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} />
-      <Component cart={cart} toggleCart={toggleCart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} {...pageProps} />
+      <Component cart={cart} buyNow={buyNow} toggleCart={toggleCart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} {...pageProps} />
       <Footer />
     </>
   )
