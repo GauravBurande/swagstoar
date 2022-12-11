@@ -6,11 +6,25 @@ import { GrClose } from 'react-icons/gr';
 import { BsFillBagCheckFill } from 'react-icons/bs';
 import { AiFillPlusCircle, AiFillMinusCircle } from 'react-icons/ai';
 import { MdAccountCircle } from 'react-icons/md';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal, toggleCart, cartRef }) => {
 
   return (
-    <div className='flex sticky top-0 flex-col md:flex-row shadow-2xl text-gray-400 bg-gray-900 body-font px-5 py-2 justify-center md:justify-start items-center'>
+    <div className='flex sticky z-10 top-0 flex-col md:flex-row shadow-2xl text-gray-400 bg-gray-900 body-font px-5 py-2 justify-center md:justify-start items-center'>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
       <div className="logo -mx-3 md:mx-0 flex items-center">
         <Image src="/logo.png" width={60} height={60} alt="Swagstoar" />
         <Link href='/'>

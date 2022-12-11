@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar'
 import Head from 'next/head'
 import { useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/router'
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function MyApp({ Component, pageProps }) {
