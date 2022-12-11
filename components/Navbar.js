@@ -22,7 +22,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal, toggleCa
           <Link className='hover:text-purple-500' href='/tshirts'><li>Tshirts</li></Link>
           <Link className='hover:text-purple-500' href='/hoodies'><li>Hoodies</li></Link>
           <Link className='hover:text-purple-500' href='/stickers'><li>Stickers</li></Link>
-          <Link className='hover:text-purple-500' href='/mugs'><li>Mugs</li></Link>
+          <Link className='hover:text-purple-500' href='/hats'><li>Hats</li></Link>
         </ul>
       </div>
 
@@ -30,9 +30,9 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal, toggleCa
 
       <div className="cart absolute right-0 top-8 mx-8 flex items-center space-x-3">
         <Link href={'/signin'}>
-          <MdAccountCircle className='md:text-2xl cursor-pointer' />
+          <MdAccountCircle className='md:text-2xl hover:text-purple-500 cursor-pointer' />
         </Link>
-        <GiShoppingBag onClick={toggleCart} className='md:text-2xl cursor-pointer' />
+        <GiShoppingBag onClick={toggleCart} className='md:text-2xl hover:text-purple-500 cursor-pointer' />
       </div>
 
       <div ref={cartRef} className={`sideCart overflow-y-scroll sm:w-1/2 md:w-1/3 h-[100vh] fixed top-0 right-0 shadow-lg bg-gray-800 px-14 py-20 transform transition-transform translate-x-full`}>

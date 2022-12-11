@@ -3,13 +3,14 @@ import Link from 'next/link'
 import Product from "../models/Product"
 import mongoose from "mongoose";
 
-const Tshirts = ({ products }) => {
+const Tshirts = ({ tshirts }) => {
   return (
     <div>
       <section className="text-gray-400 bg-gray-900 body-font">
         <div className="container px-5 py-12 mx-auto">
           <div className="flex flex-wrap -m-4">
-            {products.map((item) => {
+            {tshirts.length == 0 && <p className='flex mx-auto px-10 items-center text-xl h-40'>Sorry to inform you that all of the TSHIRTS are currently out of stock. New stock is coming soon.</p>}
+            {tshirts.map((item) => {
               return (
                 <div key={item._id} className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-2xl">
                   <Link href={`/product/${item.slug}`}>
@@ -17,7 +18,7 @@ const Tshirts = ({ products }) => {
                       <img alt="tshirt" className="object-cover object-center w-full h-full block" src={item.image} />
                     </div>
                     <div className="mt-4">
-                      <h3 className="text-gray-500 text-xs text tracking-widest title-font mb-1">{item.category}</h3>
+                      <h3 className="text-gray-500 text-xs text tracking-widest title-font mb-1">TSHIRTS</h3>
                       <h2 className="text-white title-font text-lg font-medium">{item.title}</h2>
                       <p className="mt-1">${item.price}.00</p>
                     </div>
@@ -36,9 +37,9 @@ export async function getServerSideProps(context) {
     mongoose.connect(process.env.MONGO_URI)
   }
 
-  let products = await (Product.find({ category: 'tshirt' }))
+  let tshirts = await (Product.find({ category: 'tshirt' }))
   return {
-    props: { products: JSON.parse(JSON.stringify(products)) }
+    props: { tshirts: JSON.parse(JSON.stringify(tshirts)) }
   }
 }
 
