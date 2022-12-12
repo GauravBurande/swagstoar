@@ -1,9 +1,73 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useRouter } from 'next/router';
 
 const SignIn = () => {
+
+  const router = useRouter()
+
+  const [credentials, setCredentials] = useState({ email: "", password: "" })
+
+  const handleChange = (e) => {
+    setCredentials({ ...credentials, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    let res = await fetch("http://localhost:3000/api/signin", {
+      method: 'POST',
+      headers: {
+        'Content-Type': "application/json"
+      },
+      body: JSON.stringify(credentials)
+    })
+
+    let response = await res.json()
+
+    if (response.success) {
+      setCredentials({ email: "", password: "" })
+      toast('You are successfully singned in.', {
+        position: "top-left",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+      router.push('/')
+    } else {
+      toast.error(response.error, {
+        position: "top-left",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    }
+  }
+
   return (
     <div className='bg-gray-900'>
+      <ToastContainer
+        position="top-left"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
       <div className="flex min-h-full text-white textwh items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="w-full max-w-md space-y-8">
           <div>
@@ -15,16 +79,16 @@ const SignIn = () => {
               <Link href="/signup" className="font-medium text-purple-600 hover:text-purple-500"> Sign Up</Link>
             </p>
           </div>
-          <form className="mt-8 space-y-6" action="#" method="POST">
+          <form onSubmit={handleSubmit} className="mt-8 space-y-6" method="POST">
             <input type="hidden" name="remember" value="true" />
             <div className="space-y-4 rounded-md shadow-sm">
               <div>
                 <label htmlFor="email-address" className="sr-only">Email address</label>
-                <input id="email-address" name="email" type="email" autoComplete="email" required className="w-full bg-gray-800 rounded border bg-opacity-40 border-gray-700 focus:bg-transparent focus:ring-2 focus:ring-purple-900 focus:border-purple-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" placeholder="Email address" />
+                <input onChange={handleChange} value={credentials.email} id="email-address" name="email" type="email" autoComplete="email" required className="w-full bg-gray-800 rounded border bg-opacity-40 border-gray-700 focus:bg-transparent focus:ring-2 focus:ring-purple-900 focus:border-purple-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" placeholder="Email address" />
               </div>
               <div>
                 <label htmlFor="password" className="sr-only">Password</label>
-                <input id="password" name="password" type="password" autoComplete="current-password" required className="w-full bg-gray-800 rounded border bg-opacity-40 border-gray-700 focus:bg-transparent focus:ring-2 focus:ring-purple-900 focus:border-purple-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" placeholder="Password" />
+                <input onChange={handleChange} value={credentials.password} id="password" name="password" type="password" autoComplete="password" required className="w-full bg-gray-800 rounded border bg-opacity-40 border-gray-700 focus:bg-transparent focus:ring-2 focus:ring-purple-900 focus:border-purple-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" placeholder="Password" />
               </div>
             </div>
 
