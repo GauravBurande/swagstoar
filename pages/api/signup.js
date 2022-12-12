@@ -12,7 +12,7 @@ const handler = async (req, res) => {
         let u = new User({ name, email, password: encryptPass })
         await u.save()
 
-        res.status(200).json({ success: 'user added to the database' })
+        res.status(200).json({ success: true, message: 'user added to the database' })
     } else {
         res.status(400).json({ error: 'this method is not allowed' })
     }

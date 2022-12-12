@@ -39,6 +39,7 @@ const SignIn = () => {
         progress: undefined,
         theme: "dark",
       });
+      localStorage.setItem('token', response.token)
       router.push('/')
     } else {
       toast.error(response.error, {

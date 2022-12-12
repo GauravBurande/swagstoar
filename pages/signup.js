@@ -2,8 +2,11 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useRouter } from 'next/router';
 
 const Signup = () => {
+
+  const router = useRouter()
 
   const [credentials, setCredentials] = useState({ name: "", email: "", password: "" })
 
@@ -24,18 +27,20 @@ const Signup = () => {
 
     let response = await res.json()
 
-    setCredentials({ name: "", email: "", password: "" })
-
-    toast('Your account is created successfully.', {
-      position: "top-left",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
+    if (response.success) {
+      setCredentials({ name: "", email: "", password: "" })
+      toast('Your account is created successfully.', {
+        position: "top-left",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+      router.push('/signin')
+    }
   }
 
   return (
