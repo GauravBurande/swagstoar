@@ -13,6 +13,8 @@ function MyApp({ Component, pageProps }) {
 
   const [cart, setCart] = useState({})
   const [subTotal, setSubTotal] = useState(0)
+  const [user, setUser] = useState({ value: null })
+  const [key, setKey] = useState(0)
 
   useEffect(() => {
     try {
@@ -23,7 +25,12 @@ function MyApp({ Component, pageProps }) {
     } catch (error) {
       localStorage.clear()
     }
-  }, [])
+    const token = localStorage.getItem('token')
+    if (token) {
+      setUser({ value: token })
+      setKey(Math.random())
+    }
+  }, [router.query])
 
   const cartRef = useRef()
 
@@ -73,7 +80,7 @@ function MyApp({ Component, pageProps }) {
 
     toast('Products are removed from the cart.', {
       position: "bottom-right",
-      autoClose: 3000,
+      autoClose: 1000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -104,6 +111,25 @@ function MyApp({ Component, pageProps }) {
     router.push('/checkout')
   }
 
+  const signout = () => {
+    localStorage.removeItem('token')
+    setUser({ value: null })
+    setKey(Math.random())
+
+    setTimeout(() => {
+      toast('You are signed out successfully.', {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    }, 500);
+  }
+
   return (
     <>
       <Head>
@@ -112,7 +138,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navbar cart={cart} toggleCart={toggleCart} cartRef={cartRef} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} />
+      <Navbar signout={signout} user={user} key={key} cart={cart} toggleCart={toggleCart} cartRef={cartRef} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} />
       <Component cart={cart} buyNow={buyNow} toggleCart={toggleCart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} {...pageProps} />
       <Footer />
     </>

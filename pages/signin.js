@@ -40,7 +40,10 @@ const SignIn = () => {
         theme: "dark",
       });
       localStorage.setItem('token', response.token)
-      router.push('/')
+
+      setTimeout(() => {
+        router.push('/')
+      }, 1000);
     } else {
       toast.error(response.error, {
         position: "top-left",
