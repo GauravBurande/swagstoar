@@ -6,6 +6,7 @@ import { useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/router'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import LoadingBar from 'react-top-loading-bar'
 
 function MyApp({ Component, pageProps }) {
 
@@ -15,8 +16,18 @@ function MyApp({ Component, pageProps }) {
   const [subTotal, setSubTotal] = useState(0)
   const [user, setUser] = useState({ value: null })
   const [key, setKey] = useState(0)
+  const [progress, setProgress] = useState(0)
 
   useEffect(() => {
+
+    router.events.on('routeChangeStart', () => {
+      setProgress(40)
+    })
+
+    router.events.on('routeChangeComplete', () => {
+      setProgress(100)
+    })
+
     try {
       if (localStorage.getItem('cart')) {
         setCart(JSON.parse(localStorage.getItem('cart')))
@@ -127,7 +138,7 @@ function MyApp({ Component, pageProps }) {
         progress: undefined,
         theme: "dark",
       });
-    }, 500);
+    }, 50);
   }
 
   return (
@@ -138,6 +149,12 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <LoadingBar
+        color='#fff'
+        progress={progress}
+        onLoaderFinished={() => setProgress(0)}
+        waitingTime={200}
+      />
       <Navbar signout={signout} user={user} key={key} cart={cart} toggleCart={toggleCart} cartRef={cartRef} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} />
       <Component cart={cart} buyNow={buyNow} toggleCart={toggleCart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} {...pageProps} />
       <Footer />

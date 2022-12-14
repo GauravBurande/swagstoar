@@ -1,10 +1,16 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/router';
 
 const SignIn = () => {
+
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      router.push('/')
+    }
+  }, [])
 
   const router = useRouter()
 
@@ -96,11 +102,7 @@ const SignIn = () => {
               </div>
             </div>
 
-            <div className="flex items-center justify-between">
-              <div className="flex items-center">
-                <input id="remember-me" name="remember-me" type="checkbox" className="h-4 w-4 rounded border-gray-300 text-purple-600 focus:ring-purple-500" />
-                <label htmlFor="remember-me" className="ml-2 block text-sm">Remember me</label>
-              </div>
+            <div className="flex items-center justify-end">
 
               <div className="text-sm">
                 <Link href="/forgot" className="font-medium text-purple-600 hover:text-purple-500">Forgot your password?</Link>

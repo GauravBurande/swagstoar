@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const Forgot = () => {
+
+    const router = useRouter()
+
+    useEffect(() => {
+        if (localStorage.getItem('token')) {
+            router.push('/')
+        }
+    }, [])
+
     return (
         <div className='bg-gray-900'>
             <div className="flex min-h-full text-white textwh items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
