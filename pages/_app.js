@@ -127,6 +127,8 @@ function MyApp({ Component, pageProps }) {
     setUser({ value: null })
     setKey(Math.random())
 
+    router.push('/')
+
     setTimeout(() => {
       toast('You are signed out successfully.', {
         position: "top-right",

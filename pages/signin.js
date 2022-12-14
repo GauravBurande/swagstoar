@@ -23,7 +23,7 @@ const SignIn = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    let res = await fetch("http://localhost:3000/api/signin", {
+    let res = await fetch(`${process.env.HOST}/api/signin`, {
       method: 'POST',
       headers: {
         'Content-Type': "application/json"
