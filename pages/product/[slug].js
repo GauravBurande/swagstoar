@@ -16,7 +16,7 @@ const Post = ({ addToCart, toggleCart, product, buyNow }) => {
 
 
   const checkPin = async () => {
-    let pins = await fetch(`${process.env.HOST}/api/pincode`)
+    let pins = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/pincode`)
     let pinJson = await pins.json()
     if (pinJson.includes(parseInt(pin))) {
       toast('Our services are available at your place.', {

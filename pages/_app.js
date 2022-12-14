@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
   const [cart, setCart] = useState({})
   const [subTotal, setSubTotal] = useState(0)
   const [user, setUser] = useState({ value: null })
-  const [key, setKey] = useState(0)
+  const [key, setKey] = useState()
   const [progress, setProgress] = useState(0)
 
   useEffect(() => {
@@ -157,7 +157,7 @@ function MyApp({ Component, pageProps }) {
         onLoaderFinished={() => setProgress(0)}
         waitingTime={200}
       />
-      <Navbar signout={signout} user={user} key={key} cart={cart} toggleCart={toggleCart} cartRef={cartRef} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} />
+      {key && <Navbar signout={signout} user={user} key={key} cart={cart} toggleCart={toggleCart} cartRef={cartRef} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} />}
       <Component cart={cart} buyNow={buyNow} toggleCart={toggleCart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} {...pageProps} />
       <Footer />
     </>
