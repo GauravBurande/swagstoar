@@ -112,6 +112,17 @@ function MyApp({ Component, pageProps }) {
     }
     setCart(newCart)
     saveCart(newCart)
+
+    toast('Product is removed from the cart.', {
+      position: "bottom-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
   }
 
   const buyNow = (itemCode, qty, price, name, size, variant) => {
