@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AiFillPlusCircle, AiFillMinusCircle } from 'react-icons/ai';
 import Head from 'next/head';
 import Script from 'next/script';
@@ -51,10 +51,42 @@ const Checkout = ({ cart, addToCart, removeFromCart, subTotal }) => {
   //   });
   // }
 
-  const dummyPay = () => {
-    toast("This is just for my portfolio, there's no need to pay, I don't have any actual products physically.", {
+
+  const [state, setState] = useState('')
+  const [city, setCity] = useState('')
+  const [email, setEmail] = useState('')
+  const [address, setAddress] = useState('')
+
+  const handleChange = (e) => {
+    if (e.target.name === 'email') {
+      setEmail(e.target.value)
+    }
+    if (e.target.name === 'address') {
+      setAddress(e.target.value)
+    }
+  }
+
+  const dummyPay = async () => {
+
+    let oid = JSON.stringify(Math.floor(Math.random() * Date.now()));
+
+    const data = { cart, subTotal, oid, email, address }
+    console.log(data)
+    let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/postorder`, {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application-json"
+      },
+      body: JSON.stringify(data)
+    })
+
+    let response = await res.json()
+    console.log(response)
+
+
+    toast("This is just for my portfolio, there's no need to pay, I don't have any actual physically products to sell.", {
       position: "bottom-right",
-      autoClose: 4000,
+      autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -66,14 +98,14 @@ const Checkout = ({ cart, addToCart, removeFromCart, subTotal }) => {
 
   return (
     <>
-      <Head>
+      {/* <Head>
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
       </Head>
-      <Script type="application/javascript" src={`${process.env.NEXT_PUBLIC_PAYTM_HOST}/merchantpgpui/checkoutjs/merchants/${process.env.NEXT_PUBLIC_PAYTM_MID}.js`} crossorigin="anonymous" />
+      <Script type="application/javascript" src={`${process.env.NEXT_PUBLIC_PAYTM_HOST}/merchantpgpui/checkoutjs/merchants/${process.env.NEXT_PUBLIC_PAYTM_MID}.js`} crossorigin="anonymous" /> */}
       <div className='bg-gray-900'>
         <ToastContainer
           position="bottom-right"
-          autoClose={4000}
+          autoClose={5000}
           hideProgressBar={false}
           newestOnTop={false}
           closeOnClick
@@ -83,7 +115,7 @@ const Checkout = ({ cart, addToCart, removeFromCart, subTotal }) => {
           pauseOnHover
           theme="dark"
         />
-        <div className='container  text-gray-400 m-auto'>
+        <div className='container text-gray-400 m-auto'>
           <div className="px-4 md:w-1/3 mx-auto">
             <h1 className='text-sm px-4 py-8'>Checkout</h1>
             <h2 className='font-semibold text-xl my-4 px-2'>Delivery Details</h2>
@@ -97,16 +129,18 @@ const Checkout = ({ cart, addToCart, removeFromCart, subTotal }) => {
               <div className="px-2 w-1/2">
                 <div className="mb-4">
                   <label htmlFor="email" className="leading-7 text-sm text-gray-400">Email</label>
-                  <input type="email" id="email" name="email" className="w-full bg-gray-800 rounded border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                  <input onChange={handleChange} type="email" id="email" name="email" className="w-full bg-gray-800 rounded border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                 </div>
               </div>
             </div>
+
             <div className="px-2 w-full">
               <div className=" mb-4">
                 <label htmlFor="address" className="leading-7 text-sm text-gray-400">Address</label>
-                <textarea type="address" id="address" name="address" className="w-full bg-gray-800 rounded border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                <textarea onChange={handleChange} type="address" id="address" name="address" className="w-full bg-gray-800 rounded border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
               </div>
             </div>
+
             <div className="mx-auto flex">
               <div className="px-2 w-1/2">
                 <div className="mb-4">
@@ -116,23 +150,23 @@ const Checkout = ({ cart, addToCart, removeFromCart, subTotal }) => {
               </div>
               <div className="px-2 w-1/2">
                 <div className="mb-4">
-                  <label htmlFor="city" className="leading-7 text-sm text-gray-400">City</label>
-                  <input type="text" id="city" name="city" className="w-full bg-gray-800 rounded border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                  <label htmlFor="pincode" className="leading-7 text-sm text-gray-400">Pincode</label>
+                  <input type="text" id="pincode" name="pincode" className="w-full bg-gray-800 rounded border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                 </div>
               </div>
-
             </div>
+
             <div className="mx-auto flex">
               <div className="px-2 w-1/2">
                 <div className="mb-4">
                   <label htmlFor="state" className="leading-7 text-sm text-gray-400">State</label>
-                  <input type="text" id="state" name="state" className="w-full bg-gray-800 rounded border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                  <input value={state} type="text" id="state" name="state" className="w-full bg-gray-800 rounded border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" readOnly={true} />
                 </div>
               </div>
               <div className="px-2 w-1/2">
                 <div className="mb-4">
-                  <label htmlFor="pincode" className="leading-7 text-sm text-gray-400">Pincode</label>
-                  <input type="text" id="pincode" name="pincode" className="w-full bg-gray-800 rounded border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                  <label htmlFor="city" className="leading-7 text-sm text-gray-400">City</label>
+                  <input value={city} type="text" id="city" name="city" className="w-full bg-gray-800 rounded border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" readOnly={true} />
                 </div>
               </div>
             </div>
