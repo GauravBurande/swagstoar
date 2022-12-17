@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Script from 'next/script';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useRouter } from 'next/router';
 
 const Checkout = ({ cart, addToCart, removeFromCart, subTotal }) => {
 
@@ -51,6 +52,7 @@ const Checkout = ({ cart, addToCart, removeFromCart, subTotal }) => {
   //   });
   // }
 
+  const router = useRouter()
 
   const [state, setState] = useState('')
   const [city, setCity] = useState('')
@@ -71,7 +73,6 @@ const Checkout = ({ cart, addToCart, removeFromCart, subTotal }) => {
     let oid = JSON.stringify(Math.floor(Math.random() * Date.now()));
 
     const data = { cart, subTotal, oid, email, address }
-    console.log(data)
     let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/postorder`, {
       method: 'POST',
       headers: {
@@ -84,16 +85,20 @@ const Checkout = ({ cart, addToCart, removeFromCart, subTotal }) => {
     console.log(response)
 
 
-    toast("This is just for my portfolio, there's no need to pay, I don't have any actual physically products to sell.", {
-      position: "bottom-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
+    setTimeout(() => {
+      toast("This is just for my portfolio, there's no need to pay, I don't have any actual physically products to sell.", {
+        position: "top-left",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    }, 1300);
+
+    router.push('/order')
   }
 
   return (
@@ -104,7 +109,7 @@ const Checkout = ({ cart, addToCart, removeFromCart, subTotal }) => {
       <Script type="application/javascript" src={`${process.env.NEXT_PUBLIC_PAYTM_HOST}/merchantpgpui/checkoutjs/merchants/${process.env.NEXT_PUBLIC_PAYTM_MID}.js`} crossorigin="anonymous" /> */}
       <div className='bg-gray-900'>
         <ToastContainer
-          position="bottom-right"
+          position="top-left"
           autoClose={5000}
           hideProgressBar={false}
           newestOnTop={false}
