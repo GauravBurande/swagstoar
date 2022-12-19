@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import { AiFillPlusCircle, AiFillMinusCircle } from 'react-icons/ai';
-import Head from 'next/head';
-import Script from 'next/script';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/router';
@@ -58,6 +56,8 @@ const Checkout = ({ cart, addToCart, removeFromCart, subTotal }) => {
   const [city, setCity] = useState('')
   const [email, setEmail] = useState('')
   const [address, setAddress] = useState('')
+  const [toggleBtn, setToggleBtn] = useState(false)
+  const [orderID, setOrderId] = useState(false)
 
   const handleChange = (e) => {
     if (e.target.name === 'email') {
@@ -68,27 +68,40 @@ const Checkout = ({ cart, addToCart, removeFromCart, subTotal }) => {
     }
   }
 
+
   const dummyPay = async () => {
+    if (localStorage.getItem('token')) {
+      let oid = Math.floor(Math.random() * Date.now());
+      setOrderId(oid)
+      const data = { cart, subTotal, oid, email, address }
+      let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/postorder`, {
+        method: 'POST',
+        headers: {
+          "Content-Type": "application-json"
+        },
+        body: JSON.stringify(data)
+      })
 
-    let oid = JSON.stringify(Math.floor(Math.random() * Date.now()));
+      let response = await res.json()
 
-    const data = { cart, subTotal, oid, email, address }
-    let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/postorder`, {
-      method: 'POST',
-      headers: {
-        "Content-Type": "application-json"
-      },
-      body: JSON.stringify(data)
-    })
+      setTimeout(() => {
+        toast("This is just for my portfolio, there's no need to pay, I don't have any actual physical products to sell. Please click on view order and wait until I redirect you to the order confirmation page.", {
+          position: "top-left",
+          autoClose: 10000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+      }, 100);
 
-    let response = await res.json()
-    console.log(response)
-
-
-    setTimeout(() => {
-      toast("This is just for my portfolio, there's no need to pay, I don't have any actual physically products to sell.", {
+      setToggleBtn(true)
+    } else {
+      toast("You need to sign in first.", {
         position: "top-left",
-        autoClose: 5000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -96,9 +109,36 @@ const Checkout = ({ cart, addToCart, removeFromCart, subTotal }) => {
         progress: undefined,
         theme: "dark",
       });
-    }, 1300);
+    }
+  }
 
-    router.push('/order')
+  const redirectToOrder = async () => {
+    let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/posttransaction`, {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application-json"
+      },
+      body: JSON.stringify(orderID)
+    })
+
+    let response = await res.json()
+
+    toast("Please wait, redirecting....", {
+      position: "top-left",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+
+
+    setTimeout(() => {
+      router.push('/order?id=' + response.id)
+      setToggleBtn(false)
+    }, 3000);
   }
 
   return (
@@ -110,7 +150,7 @@ const Checkout = ({ cart, addToCart, removeFromCart, subTotal }) => {
       <div className='bg-gray-900'>
         <ToastContainer
           position="top-left"
-          autoClose={5000}
+          autoClose={20000}
           hideProgressBar={false}
           newestOnTop={false}
           closeOnClick
@@ -134,7 +174,7 @@ const Checkout = ({ cart, addToCart, removeFromCart, subTotal }) => {
               <div className="px-2 w-1/2">
                 <div className="mb-4">
                   <label htmlFor="email" className="leading-7 text-sm text-gray-400">Email</label>
-                  <input onChange={handleChange} type="email" id="email" name="email" className="w-full bg-gray-800 rounded border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                  <input onChange={handleChange} type="email" id="email" name="email" className="w-full bg-gray-800 rounded border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required />
                 </div>
               </div>
             </div>
@@ -188,7 +228,7 @@ const Checkout = ({ cart, addToCart, removeFromCart, subTotal }) => {
                     {Object.keys(cart).map((k) => {
                       return <li key={k}>
                         <div className="item flex my-10">
-                          <div className='font-medium w-2/3 md:w-auto pr-6'>{cart[k].name}</div>
+                          <div className='font-medium w-2/3 pr-6'>{cart[k].name}</div>
                           <div className=' flex justify-center items-center space-x-3 text-3xl'>
                             <AiFillMinusCircle onClick={() => { removeFromCart(k, 1) }} className='text-purple-500 cursor-pointer' />
                             <span className='text-lg'>{cart[k].qty}</span>
@@ -200,7 +240,8 @@ const Checkout = ({ cart, addToCart, removeFromCart, subTotal }) => {
                   </div>
                 </ol>
                 <div className="total font-bold mb-4">Amount: ${subTotal}</div>
-                <button onClick={dummyPay} className="lg:mt-2 xl:mt-0 items-center flex-shrink-0 inline-flex text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">Pay </button>
+                {!toggleBtn && <button onClick={dummyPay} disabled={email.length < 3 && address.length < 3} className="lg:mt-2 xl:mt-0 items-center flex-shrink-0 inline-flex disabled:text-white text-black bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">Pay</button>}
+                {toggleBtn && <button onClick={redirectToOrder} className="lg:mt-2 xl:mt-0 items-center flex-shrink-0 inline-flex disabled:text-black text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">View Order</button>}
                 {/* <button onClick={initiatePayment} className="lg:mt-2 xl:mt-0 items-center flex-shrink-0 inline-flex text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">Pay </button> */}
               </div>
             </div>
