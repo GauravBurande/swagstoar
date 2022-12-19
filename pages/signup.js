@@ -35,16 +35,18 @@ const Signup = () => {
 
     if (response.success) {
       setCredentials({ name: "", email: "", password: "" })
-      toast('Your account is created successfully.', {
-        position: "top-left",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      });
+      setTimeout(() => {
+        toast('Your account is created successfully.', {
+          position: "top-left",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+      }, 100);
       router.push('/signin')
     }
   }

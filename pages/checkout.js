@@ -4,7 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/router';
 
-const Checkout = ({ cart, addToCart, removeFromCart, subTotal }) => {
+const Checkout = ({ cart, addToCart, clearCart, removeFromCart, subTotal }) => {
 
   // const initiatePayment = async () => {
 
@@ -96,6 +96,10 @@ const Checkout = ({ cart, addToCart, removeFromCart, subTotal }) => {
           theme: "dark",
         });
       }, 100);
+
+      setTimeout(() => {
+        clearCart()
+      }, 10000);
 
       setToggleBtn(true)
     } else {

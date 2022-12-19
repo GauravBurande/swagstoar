@@ -3,9 +3,9 @@ import Order from "../models/Order"
 const mongoose = require('mongoose')
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Link from 'next/link';
 
 const MyOrder = ({ order }) => {
-
   return (
     <div>
       <section className="text-gray-400 bg-gray-900 body-font overflow-hidden">
@@ -21,7 +21,7 @@ const MyOrder = ({ order }) => {
           pauseOnHover
           theme="dark"
         />
-        <div className="container  -translate-y-20 px-5 py-24 mx-auto">
+        <div className="container  md:-translate-y-20 px-5 py-24 mx-auto">
           <div className="lg:w-4/5 mx-auto flex flex-wrap">
             <div className="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
               <h2 className="text-sm title-font text-gray-500 tracking-widest">SWAGSTOAR</h2>
@@ -54,14 +54,14 @@ const MyOrder = ({ order }) => {
 
               <div className="flex">
                 <span className="title-font font-medium text-2xl text-white">${order.amount}.00</span>
-                <button className="flex ml-auto text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">Track Order</button>
+                <button className="flex ml-auto text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded"><Link href={'/orders'}>Track Order</Link></button>
               </div>
             </div>
-            <img alt="ecommerce" className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="/logo.png" />
+            <img alt="ecommerce" className="lg:w-1/2 w-full lg:h-auto hidden md:block h-64 object-cover object-center rounded" src="/logo.png" />
           </div>
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   )
 }
 

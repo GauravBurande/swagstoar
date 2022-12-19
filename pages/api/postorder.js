@@ -13,7 +13,6 @@ const handler = async (req, res) => {
             status: 'pending'
         })
 
-        console.log("oid from postorder:", data.oid)
         await order.save()
 
         res.status(200).json({ success: true, message: "The order has been placed" })
