@@ -4,7 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/router';
 
-const Checkout = ({ cart, addToCart, clearCart, removeFromCart, subTotal }) => {
+const Checkout = ({ cart, addToCart, clearCart, removeFromCart, subTotal, user }) => {
 
   // const initiatePayment = async () => {
 
@@ -55,17 +55,13 @@ const Checkout = ({ cart, addToCart, clearCart, removeFromCart, subTotal }) => {
   const [pinCode, setPinCode] = useState('')
   const [state, setState] = useState('')
   const [city, setCity] = useState('')
-  const [email, setEmail] = useState('')
   const [address, setAddress] = useState('')
   const [toggleBtn, setToggleBtn] = useState(false)
   const [orderID, setOrderId] = useState(false)
 
   const handleChange = async (e) => {
 
-    if (e.target.name === 'email') {
-      setEmail(e.target.value)
-    }
-    else if (e.target.name === 'address') {
+    if (e.target.name === 'address') {
       setAddress(e.target.value)
     }
     else if (e.target.name === 'pincode') {
@@ -93,7 +89,7 @@ const Checkout = ({ cart, addToCart, clearCart, removeFromCart, subTotal }) => {
     if (localStorage.getItem('token')) {
       let oid = Math.floor(Math.random() * Date.now());
       setOrderId(oid)
-      const data = { cart, subTotal, oid, email, address }
+      const data = { cart, subTotal, oid, email: user.email, address }
       let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/postorder`, {
         method: 'POST',
         headers: {
@@ -198,7 +194,7 @@ const Checkout = ({ cart, addToCart, clearCart, removeFromCart, subTotal }) => {
               <div className="px-2 w-1/2">
                 <div className="mb-4">
                   <label htmlFor="email" className="leading-7 text-sm text-gray-400">Email</label>
-                  <input onChange={handleChange} type="email" id="email" name="email" className="w-full bg-gray-800 rounded border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required />
+                  <input onChange={handleChange} value={user.email} type="email" id="email" name="email" className="w-full bg-gray-800 rounded border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" readOnly />
                 </div>
               </div>
             </div>
@@ -264,7 +260,7 @@ const Checkout = ({ cart, addToCart, clearCart, removeFromCart, subTotal }) => {
                   </div>
                 </ol>
                 <div className="total font-bold mb-4">Amount: ${subTotal}</div>
-                {!toggleBtn && <button onClick={dummyPay} disabled={email.length < 3 && address.length < 3} className="lg:mt-2 xl:mt-0 items-center flex-shrink-0 inline-flex disabled:text-white text-black bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">Pay</button>}
+                {!toggleBtn && <button onClick={dummyPay} disabled={address.length < 3} className="lg:mt-2 xl:mt-0 items-center flex-shrink-0 inline-flex disabled:text-white text-black bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">Pay</button>}
                 {toggleBtn && <button onClick={redirectToOrder} className="lg:mt-2 xl:mt-0 items-center flex-shrink-0 inline-flex disabled:text-black text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">View Order</button>}
                 {/* <button onClick={initiatePayment} className="lg:mt-2 xl:mt-0 items-center flex-shrink-0 inline-flex text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">Pay </button> */}
               </div>

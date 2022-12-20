@@ -46,6 +46,7 @@ const SignIn = () => {
         theme: "dark",
       });
       localStorage.setItem('token', response.token)
+      localStorage.setItem('email', response.email)
 
       setTimeout(() => {
         router.push('/')

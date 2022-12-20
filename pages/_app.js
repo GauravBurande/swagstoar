@@ -7,6 +7,7 @@ import { useRouter } from 'next/router'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import LoadingBar from 'react-top-loading-bar'
+import jsonwebtoken from "jsonwebtoken"
 
 function MyApp({ Component, pageProps }) {
 
@@ -37,8 +38,9 @@ function MyApp({ Component, pageProps }) {
       localStorage.clear()
     }
     const token = localStorage.getItem('token')
+    const email = localStorage.getItem('email')
     if (token) {
-      setUser({ value: token })
+      setUser({ value: token, email })
     }
     setKey(Math.random())
   }, [router.query])
@@ -75,7 +77,7 @@ function MyApp({ Component, pageProps }) {
 
     toast('Product added to the cart.', {
       position: "bottom-right",
-      autoClose: 3000,
+      autoClose: 1000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -169,7 +171,7 @@ function MyApp({ Component, pageProps }) {
         waitingTime={200}
       />
       {key && <Navbar signout={signout} user={user} key={key} cart={cart} toggleCart={toggleCart} cartRef={cartRef} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} />}
-      <Component cart={cart} buyNow={buyNow} toggleCart={toggleCart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} {...pageProps} />
+      <Component cart={cart} user={user} buyNow={buyNow} toggleCart={toggleCart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subTotal={subTotal} {...pageProps} />
       <Footer />
     </>
   )

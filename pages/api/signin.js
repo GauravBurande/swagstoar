@@ -15,7 +15,7 @@ const handler = async (req, res) => {
         if (user) {
             if (req.body.password === decryptPass) {
                 const token = jwt.sign({ email: user.email, name: user.name }, process.env.JWT_SECRET_KEY);
-                res.status(200).json({ success: true, token })
+                res.status(200).json({ success: true, token, email: user.email })
             }
             else {
                 res.status(400).json({ success: false, error: 'Invalid credentials!' })
