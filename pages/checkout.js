@@ -52,6 +52,7 @@ const Checkout = ({ cart, addToCart, clearCart, removeFromCart, subTotal }) => {
 
   const router = useRouter()
 
+  const [pinCode, setPinCode] = useState('')
   const [state, setState] = useState('')
   const [city, setCity] = useState('')
   const [email, setEmail] = useState('')
@@ -59,12 +60,31 @@ const Checkout = ({ cart, addToCart, clearCart, removeFromCart, subTotal }) => {
   const [toggleBtn, setToggleBtn] = useState(false)
   const [orderID, setOrderId] = useState(false)
 
-  const handleChange = (e) => {
+  const handleChange = async (e) => {
+
     if (e.target.name === 'email') {
       setEmail(e.target.value)
     }
-    if (e.target.name === 'address') {
+    else if (e.target.name === 'address') {
       setAddress(e.target.value)
+    }
+    else if (e.target.name === 'pincode') {
+      setPinCode(e.target.value)
+
+      if (e.target.value.length == 6) {
+        let pins = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/pincode`)
+        let pinJson = await pins.json()
+        if (Object.keys(pinJson).includes(e.target.value)) {
+          setCity(pinJson[e.target.value][0])
+          setState(pinJson[e.target.value][1])
+        } else {
+          setCity("We don't")
+          setState("deliver here.")
+        }
+      } else {
+        setCity('')
+        setState('')
+      }
     }
   }
 
@@ -200,7 +220,7 @@ const Checkout = ({ cart, addToCart, clearCart, removeFromCart, subTotal }) => {
               <div className="px-2 w-1/2">
                 <div className="mb-4">
                   <label htmlFor="pincode" className="leading-7 text-sm text-gray-400">Pincode</label>
-                  <input type="text" id="pincode" name="pincode" className="w-full bg-gray-800 rounded border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                  <input onChange={handleChange} type="text" id="pincode" name="pincode" className="w-full bg-gray-800 rounded border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                 </div>
               </div>
             </div>
@@ -208,14 +228,14 @@ const Checkout = ({ cart, addToCart, clearCart, removeFromCart, subTotal }) => {
             <div className="mx-auto flex">
               <div className="px-2 w-1/2">
                 <div className="mb-4">
-                  <label htmlFor="state" className="leading-7 text-sm text-gray-400">State</label>
-                  <input value={state} type="text" id="state" name="state" className="w-full bg-gray-800 rounded border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" readOnly={true} />
+                  <label htmlFor="city" className="leading-7 text-sm text-gray-400">City</label>
+                  <input value={city} type="text" id="city" name="city" className="w-full bg-gray-800 rounded border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" readOnly={true} />
                 </div>
               </div>
               <div className="px-2 w-1/2">
                 <div className="mb-4">
-                  <label htmlFor="city" className="leading-7 text-sm text-gray-400">City</label>
-                  <input value={city} type="text" id="city" name="city" className="w-full bg-gray-800 rounded border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" readOnly={true} />
+                  <label htmlFor="state" className="leading-7 text-sm text-gray-400">State</label>
+                  <input value={state} type="text" id="state" name="state" className="w-full bg-gray-800 rounded border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" readOnly={true} />
                 </div>
               </div>
             </div>
