@@ -8,13 +8,36 @@ import { AiFillPlusCircle, AiFillMinusCircle } from 'react-icons/ai';
 import { MdAccountCircle } from 'react-icons/md';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useRouter } from 'next/router';
 
 const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal, toggleCart, cartRef, user, signout }) => {
+
+  const router = useRouter()
 
   const [dropdown, setDropdown] = useState(false)
 
   const toggleDropdown = () => {
     setDropdown(!dropdown)
+  }
+
+  const handleCheckout = () => {
+    subTotal != 0 ? toggleCart() : emptyCart()
+    if (user.value && subTotal != 0) {
+      router.push('/checkout')
+    } else {
+      setTimeout(() => {
+        toast('Please sign in first!', {
+          position: "bottom-right",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+      }, 1000);
+    }
   }
 
   const emptyCart = () => {
@@ -102,10 +125,8 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal, toggleCa
 
         </ol>
         <div className="flex">
-          <Link href={subTotal != 0 ? '/checkout' : '#'}>
-            <button onClick={() => { subTotal != 0 ? toggleCart() : emptyCart() }} className="lg:mt-2 xl:mt-0 items-center flex-shrink-0 text-black inline-flex my-10 mr-4 bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded"><BsFillBagCheckFill className='mr-2' />Checkout</button>
-          </Link>
-          <button onClick={() => { if (subTotal != 0) { clearCart(), toggleCart() } else { emptyCart() } }} className="lg:mt-2 xl:mt-0 items-center text-black flex-shrink-0 inline-flex my-10 mx-4 bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">Clear Cart</button>
+          <button onClick={handleCheckout} className="lg:mt-2 xl:mt-0 items-center flex-shrink-0 text-black inline-flex my-10 mr-4 bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded"><BsFillBagCheckFill className='mr-2' />Checkout</button>
+          <button onClick={() => { if (subTotal != 0) { clearCart() } else { emptyCart(), toggleCart() } }} className="lg:mt-2 xl:mt-0 items-center text-black flex-shrink-0 inline-flex my-10 mx-4 bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">Clear Cart</button>
         </div>
       </div>
     </div>

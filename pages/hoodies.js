@@ -9,7 +9,7 @@ const Hoodies = ({ hoodies }) => {
       <section className="text-gray-400 bg-gray-900 body-font">
         <div className="container px-5 py-12 mx-auto">
           <div className="flex flex-wrap -m-4">
-            {hoodies.length == 0 && <p className='flex mx-auto px-10 items-center text-xl h-40'>Sorry to inform you that all of the HOODIES are currently out of stock. New stock is coming soon.</p>}
+            {hoodies.length == 0 && <p className='flex mx-auto px-10 items-center text-xl h-60'>Sorry to inform you that all of the HOODIES are currently out of stock. New stock is coming soon.</p>}
             {hoodies.map((item) => {
               return (
                 <div key={item._id} className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-2xl">
