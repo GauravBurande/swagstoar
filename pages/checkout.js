@@ -89,7 +89,7 @@ const Checkout = ({ cart, addToCart, clearCart, removeFromCart, subTotal, user }
     if (localStorage.getItem('token')) {
       let oid = Math.floor(Math.random() * Date.now());
       setOrderId(oid)
-      const data = { cart, subTotal, oid, email: user.email, address }
+      const data = { cart, subTotal, oid, email: user.email, address, pinCode }
       let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/postorder`, {
         method: 'POST',
         headers: {
@@ -100,10 +100,10 @@ const Checkout = ({ cart, addToCart, clearCart, removeFromCart, subTotal, user }
 
       let response = await res.json()
 
-      setTimeout(() => {
-        toast("This is just for my portfolio, there's no need to pay, I don't have any actual physical products to sell. Please click on view order and wait until I redirect you to the order confirmation page.", {
+      if (!response.success) {
+        toast.error(response.error, {
           position: "top-left",
-          autoClose: 10000,
+          autoClose: 3000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -111,15 +111,31 @@ const Checkout = ({ cart, addToCart, clearCart, removeFromCart, subTotal, user }
           progress: undefined,
           theme: "dark",
         });
-      }, 100);
+      }
 
       setTimeout(() => {
-        clearCart()
-      }, 10000);
+        if (response.success) {
+          toast("This is just for my portfolio, there's no need to pay, I don't have any actual physical products to sell. Please click on view order and wait until I redirect you to the order confirmation page.", {
+            position: "top-left",
+            autoClose: 10000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+          });
+          setToggleBtn(true)
+          setTimeout(() => {
+            clearCart()
+          }, 10000);
+        }
+      }, 100);
 
-      setToggleBtn(true)
+
+
     } else {
-      toast("You need to sign in first.", {
+      toast.error("You need to sign in first.", {
         position: "top-left",
         autoClose: 2000,
         hideProgressBar: false,

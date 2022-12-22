@@ -24,9 +24,9 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal, toggleCa
     subTotal != 0 ? toggleCart() : emptyCart()
     if (user.value && subTotal != 0) {
       router.push('/checkout')
-    } else {
+    } else if (!user.value) {
       setTimeout(() => {
-        toast('Please sign in first!', {
+        toast.error('Please sign in first!', {
           position: "bottom-right",
           autoClose: 1000,
           hideProgressBar: false,
@@ -42,7 +42,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal, toggleCa
 
   const emptyCart = () => {
     setTimeout(() => {
-      toast('The cart is empty!', {
+      toast.error('The cart is empty!', {
         position: "bottom-right",
         autoClose: 1000,
         hideProgressBar: false,
@@ -89,7 +89,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal, toggleCa
         {dropdown && <div className="absolute -right-3 top-9 rounded-sm px-4 py-2 w-32 bg-white text-black text-sm">
           <ul className='cursor-pointer'>
             <Link href={'/myaccount'}><li className='py-1 hover:text-purple-500'>My Account</li></Link>
-            <Link href={'/orders'}><li className='py-1 hover:text-purple-500'>Orders</li></Link>
+            <Link href={'/orders'}><li className='py-1 hover:text-purple-500'>My Orders</li></Link>
             <a onClick={() => { signout(), toggleDropdown() }}><li className='py-1 hover:text-purple-500'>Sign Out</li></a>
           </ul>
         </div>}

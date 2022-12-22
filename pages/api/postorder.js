@@ -1,8 +1,13 @@
 import connectDb from "../../middleware/mongoose"
 import Order from "../../models/Order"
+import pincodes from "../../pincodes.json"
 
 const handler = async (req, res) => {
     const data = JSON.parse(req.body)
+    if (!Object.keys(pincodes).includes(data.pinCode)) {
+        res.status(400).json({ success: false, error: "Sorry, Currently we don't deliver to this place." })
+        return
+    }
     if (req.method == 'POST') {
         let order = new Order({
             email: data.email,
