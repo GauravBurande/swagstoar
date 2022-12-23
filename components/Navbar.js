@@ -126,7 +126,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal, toggleCa
         </ol>
         <div className="flex">
           <button onClick={handleCheckout} className="lg:mt-2 xl:mt-0 items-center flex-shrink-0 text-black inline-flex my-10 mr-4 bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded"><BsFillBagCheckFill className='mr-2' />Checkout</button>
-          <button onClick={() => { if (subTotal != 0) { clearCart() } else { emptyCart(), toggleCart() } }} className="lg:mt-2 xl:mt-0 items-center text-black flex-shrink-0 inline-flex my-10 mx-4 bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">Clear Cart</button>
+          <button onClick={() => { if (subTotal != 0) { clearCart(), toggleCart() } else { emptyCart(), toggleCart() } }} className="lg:mt-2 xl:mt-0 items-center text-black flex-shrink-0 inline-flex my-10 mx-4 bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded">Clear Cart</button>
         </div>
       </div>
     </div>

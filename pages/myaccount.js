@@ -17,20 +17,22 @@ const Myaccount = ({ toggleCart, user }) => {
             router.push('/')
         }
 
-        const fetchUser = async () => {
-            let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getuser`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': "application/json"
-                },
-                body: JSON.stringify(user.email)
-            })
+        if (user) {
+            const fetchUser = async () => {
+                let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getuser`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': "application/json"
+                    },
+                    body: JSON.stringify(user.email)
+                })
 
-            let response = await res.json()
-            setMyDetails(response.userDetails)
+                let response = await res.json()
+                setMyDetails(response.userDetails)
+            }
+
+            fetchUser()
         }
-
-        fetchUser()
     }, [])
 
     const toggleDetails = () => {
@@ -75,7 +77,7 @@ const Myaccount = ({ toggleCart, user }) => {
                                 </div>
                                 <div className={`flex items-center transition-all ${!preview && 'opacity-0'} ${!preview && '-translate-y-10'} justify-center space-x-2 my-4`}>
                                     <h3 className='text-xl transition-opacity font-medium text-white'>Your Email</h3>
-                                    <p>{myDetails.email}</p>
+                                    <p>{myDetails && myDetails.email}</p>
                                 </div>
                             </div>
                             <div className="xl:w-1/3 md:w-1/2 p-4">
