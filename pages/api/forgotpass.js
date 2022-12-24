@@ -8,7 +8,6 @@ const handler = async (req, res) => {
     if (req.method === 'POST') {
 
         const updatingPass = await User.findOneAndUpdate({ email }, { "password": encryptPass })
-        console.log(updatingPass)
 
         res.status(200).json({ success: true, updatingPass })
     } else {

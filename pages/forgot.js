@@ -25,7 +25,6 @@ const Forgot = () => {
 
     const handlePassInput = async (e) => {
         e.preventDefault()
-        setChangeUI(!changeUI)
 
         let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/forgotpass`, {
             method: 'POST',
@@ -85,7 +84,7 @@ const Forgot = () => {
                         <div className="space-y-4 rounded-md shadow-sm">
                             <div>
                                 <label htmlFor="email" className="sr-only">Email address</label>
-                                <input onChange={(e) => setEmail(e.target.value)} value={email} id="email" name="email" type="email" autoComplete="email" required className="w-full bg-gray-800 rounded border bg-opacity-40 border-gray-700 focus:bg-transparent focus:ring-2 focus:ring-purple-900 focus:border-purple-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" placeholder="Email address" />
+                                <input onChange={(e) => setEmail(e.target.value)} id="email" name="email" type="email" autoComplete="email" required className="w-full bg-gray-800 rounded border bg-opacity-40 border-gray-700 focus:bg-transparent focus:ring-2 focus:ring-purple-900 focus:border-purple-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" placeholder="Email address" />
                             </div>
                         </div>
 
@@ -120,7 +119,7 @@ const Forgot = () => {
                         <div className="space-y-4 rounded-md shadow-sm">
                             <div>
                                 <label htmlFor="password" className="sr-only">Your new Password</label>
-                                <input onChange={(e) => setPassword(e.target.value)} value={password} id="password" name="password" type="password" autoComplete="password" required className="w-full bg-gray-800 rounded border bg-opacity-40 border-gray-700 focus:bg-transparent focus:ring-2 focus:ring-purple-900 focus:border-purple-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" placeholder="Your new Password" />
+                                <input onChange={(e) => setPassword(e.target.value)} id="password" name="password" type="password" autoComplete="password" required className="w-full bg-gray-800 rounded border bg-opacity-40 border-gray-700 focus:bg-transparent focus:ring-2 focus:ring-purple-900 focus:border-purple-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" placeholder="Your new Password" />
                             </div>
                         </div>
 
