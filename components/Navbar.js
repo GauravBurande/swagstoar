@@ -84,7 +84,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal, toggleCa
         </ul>
       </div>
 
-      <div className="cart absolute right-0 top-3 md:top-4 mx-4 md:mx-8 flex items-center space-x-3">
+      <div className="cart absolute right-0 top-6 md:top-4 mx-4 md:mx-8 flex items-center space-x-3">
         {user.value && <MdAccountCircle onClick={toggleDropdown} className='md:text-2xl hover:text-purple-500 cursor-pointer' />}
         {dropdown && <div className="absolute -right-3 top-9 rounded-sm px-4 py-2 w-32 bg-white text-black text-sm">
           <ul className='cursor-pointer'>

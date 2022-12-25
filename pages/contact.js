@@ -11,7 +11,7 @@ const Contact = () => {
             <div className="rounded-lg flex items-center justify-center h-64 overflow-hidden">
               <Image src="/logo.png" width={200} height={200} alt="swagstoar" />
             </div>
-            <p className='flex items-center justify-center'>If you have any questions regarding your order, feel free to send email.</p>
+            <p className='flex items-center text-center justify-center'>If you have any questions regarding your order, feel free to send email.</p>
             <div className="flex flex-col sm:flex-row mt-10">
               <div className="sm:w-1/3 text-center sm:pr-8 sm:py-8">
                 <div className="flex flex-col items-center text-center justify-center">
