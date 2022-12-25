@@ -7,9 +7,9 @@ const Contact = () => {
       <section className="text-gray-400 bg-gray-900 body-font">
         <div className="container px-5 py-24 mx-auto flex flex-col">
           <div className="lg:w-4/6 mx-auto">
-            <h2 className='flex items-center justify-center text-4xl text-white font-medium'>You can contact us anywhere!</h2>
+            <h2 className='flex items-center justify-center text-center text-4xl text-white font-medium'>You can contact us anywhere!</h2>
             <div className="rounded-lg flex items-center justify-center h-64 overflow-hidden">
-              <Image src="/logo.png" width={200} height={200} />
+              <Image src="/logo.png" width={200} height={200} alt="swagstoar" />
             </div>
             <p className='flex items-center justify-center'>If you have any questions regarding your order, feel free to send email.</p>
             <div className="flex flex-col sm:flex-row mt-10">
