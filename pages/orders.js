@@ -30,7 +30,7 @@ const Orders = () => {
     const router = useRouter()
 
     return (
-        <div className='bg-gray-900 text-white'>
+        <div className='bg-gray-900 text-white min-h-[50vh]'>
             <div className="container items-center justify-center mx-auto">
                 <h1 className='flex py-8 px-4 font-medium items-center justify-start text-2xl'>Your Orders</h1>
                 <div className="items">
