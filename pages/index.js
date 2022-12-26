@@ -21,7 +21,7 @@ export default function Home() {
 
   const slides = [
     {
-      "url": "https://cdn.shopify.com/s/files/1/1056/4958/t/4/assets/slideshow3.jpg?v=129585312461960446661508875741"
+      "url": "https://cdn.shopify.com/s/files/1/1056/4958/t/4/assets/slideshow3.jpg?v=129585312461960446661508875741",
     },
     {
       "url": "https://cdn.shopify.com/s/files/1/1056/4958/t/4/assets/slideshow2.jpg?v=101943486768698265101508875741"
@@ -32,9 +32,8 @@ export default function Home() {
   ]
   return (
     <>
-      <div className="max-w-[100vw] h-[50vh] md:h-[35rem] relative group">
+      <div className="max-w-[100vw] h-[30vh] md:h-[35rem] relative group">
         <div style={{ backgroundImage: `url(${slides[currentIndex].url})` }} className="w-full h-full bg-center bg-cover transition-all duration-500" />
-        <p>Clothing for women</p>
         <div onClick={prevSlide}>
           <BsArrowLeftCircleFill className="text-2xl hover:text-[2rem] md:text-5xl hidden group-hover:block hover:text-purple-500 transition-all md:hover:text-[3.5rem] absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 cursor-pointer" />
         </div>
