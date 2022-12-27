@@ -11,7 +11,7 @@ const Post = ({ addToCart, toggleCart, product, buyNow }) => {
   const { slug } = router.query
 
   const [pin, setPin] = useState()
-  const [service, setService] = useState()
+  // const [service, setService] = useState()
 
 
 
