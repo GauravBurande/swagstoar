@@ -2,7 +2,7 @@ import React from 'react'
 
 const Privacy = () => {
     return (
-        <div className='bg-gray-900 text-gray-400 flex flex-col items-center -400 md:px-20'>
+        <div className='bg-gray-900 px-6 text-gray-400 flex flex-col items-center -400 md:px-20'>
             <h2 className='text-4xl text-center py-20 font-medium text-white'>Privacy Policy</h2>
             <p className='md:w-1/2 flex py-6'>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
             <p className='md:w-1/2 flex py-6'>
