@@ -35,7 +35,6 @@ const Forgot = () => {
         })
 
         let response = await res.json()
-        console.log(response.updatingPass)
 
         if (response.success) {
             toast('Your password is changed successfully.', {

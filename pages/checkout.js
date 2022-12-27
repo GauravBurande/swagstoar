@@ -242,13 +242,13 @@ const Checkout = ({ cart, addToCart, clearCart, removeFromCart, subTotal, user }
               <div className="px-2 w-1/2">
                 <div className="mb-4">
                   <label htmlFor="city" className="leading-7 text-sm text-gray-400">City</label>
-                  <input onChange={() => { console.log("done") }} value={city} type="text" id="city" name="city" className="w-full bg-gray-800 rounded border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" readOnly={true} />
+                  <input value={city} type="text" id="city" name="city" className="w-full bg-gray-800 rounded border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" readOnly={true} />
                 </div>
               </div>
               <div className="px-2 w-1/2">
                 <div className="mb-4">
                   <label htmlFor="state" className="leading-7 text-sm text-gray-400">State</label>
-                  <input onChange={() => { console.log("done") }} value={state} type="text" id="state" name="state" className="w-full bg-gray-800 rounded border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" readOnly={true} />
+                  <input value={state} type="text" id="state" name="state" className="w-full bg-gray-800 rounded border border-gray-700 focus:border-purple-500 focus:ring-2 focus:ring-purple-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" readOnly={true} />
                 </div>
               </div>
             </div>

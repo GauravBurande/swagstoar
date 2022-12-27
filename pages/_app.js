@@ -7,7 +7,6 @@ import { useRouter } from 'next/router'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import LoadingBar from 'react-top-loading-bar'
-import jsonwebtoken from "jsonwebtoken"
 
 function MyApp({ Component, pageProps }) {
 
@@ -109,7 +108,6 @@ function MyApp({ Component, pageProps }) {
       newCart[itemCode].qty = cart[itemCode].qty - qty
     }
     if (newCart[itemCode].qty <= 0) {
-      console.log(newCart[itemCode])
       delete newCart[itemCode]
     }
     setCart(newCart)
