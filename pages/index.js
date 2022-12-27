@@ -101,11 +101,11 @@ export default function Home() {
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full min-h-[40vh] shadow-2xl">
                 <Link href={`/product/learn-to-code`}>
                   <div className="block static h-55 rounded overflow-hidden">
-                    <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://cdn.shopify.com/s/files/1/1056/4958/products/mockup-0e03044e_1024x1024.jpg?v=1527664988" />
+                    <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://cdn.shopify.com/s/files/1/1056/4958/products/mockup-9987c01f_1024x1024.jpg?v=1527665005" />
                   </div>
                   <div className="mt-4">
-                    <h3 className="text-gray-500 text-xs text tracking-widest title-font mb-1">HOODIES</h3>
-                    <h2 className="text-white title-font text-lg font-medium">Learn To Code Retro 80's Theme Pullover</h2>
+                    <h3 className="text-gray-500 text-xs text tracking-widest title-font mb-1">TSHIRTS</h3>
+                    <h2 className="text-white title-font text-lg font-medium">O'RLY? Forgetful Developer T-Shirt</h2>
                     <p className="mt-1">$18.00</p>
                   </div>
                 </Link>
@@ -114,12 +114,12 @@ export default function Home() {
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full min-h-[40vh] shadow-2xl">
                 <Link href={`/product/learn-to-code`}>
                   <div className="block static h-55 rounded overflow-hidden">
-                    <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://cdn.shopify.com/s/files/1/1056/4958/products/mockup-0e03044e_1024x1024.jpg?v=1527664988" />
+                    <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://cdn.shopify.com/s/files/1/1056/4958/products/mockup-abcab8ea_1024x1024.jpg?v=1527664964" />
                   </div>
                   <div className="mt-4">
-                    <h3 className="text-gray-500 text-xs text tracking-widest title-font mb-1">HOODIES</h3>
-                    <h2 className="text-white title-font text-lg font-medium">Learn To Code Retro 80's Theme Pullover</h2>
-                    <p className="mt-1">$18.00</p>
+                    <h3 className="text-gray-500 text-xs text tracking-widest title-font mb-1">HATS</h3>
+                    <h2 className="text-white title-font text-lg font-medium">Ethereum Flexfit Cap</h2>
+                    <p className="mt-1">$25.00</p>
                   </div>
                 </Link>
               </div>
