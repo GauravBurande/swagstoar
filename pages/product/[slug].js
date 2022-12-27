@@ -119,6 +119,7 @@ const Post = ({ addToCart, toggleCart, product, buyNow }) => {
                   {product.color == 'blue' && <button className={`border-2 border-gray-800 bg-blue-500 rounded-full w-6 h-6 focus:outline-none`}></button>}
                   {product.color == 'black' && <button className={`border-2 border-gray-800 bg-black rounded-full w-6 h-6 focus:outline-none`}></button>}
                   {product.color == 'white' && <button className={`border-2 border-gray-800 bg-white rounded-full w-6 h-6 focus:outline-none`}></button>}
+                  {product.color == 'gray' && <button className={`border-2 border-gray-800 bg-gray-500 rounded-full w-6 h-6 focus:outline-none`}></button>}
                 </div>
                 <div className="flex ml-6 items-center">
                   <span className="mr-3">Choose Size</span>
