@@ -99,7 +99,7 @@ export default function Home() {
               </div>
 
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full min-h-[40vh] shadow-2xl">
-                <Link href={`/product/learn-to-code`}>
+                <Link href={`/product/orly-forgetful-developer-t-shirt`}>
                   <div className="block static h-55 rounded overflow-hidden">
                     <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://cdn.shopify.com/s/files/1/1056/4958/products/mockup-9987c01f_1024x1024.jpg?v=1527665005" />
                   </div>
@@ -112,7 +112,7 @@ export default function Home() {
               </div>
 
               <div className="lg:w-1/4 md:w-1/2 p-4 w-full min-h-[40vh] shadow-2xl">
-                <Link href={`/product/learn-to-code`}>
+                <Link href={`/product/ethereum-flexfit-cap`}>
                   <div className="block static h-55 rounded overflow-hidden">
                     <img alt="tshirt" className="object-cover object-center w-full h-full block" src="https://cdn.shopify.com/s/files/1/1056/4958/products/mockup-abcab8ea_1024x1024.jpg?v=1527664964" />
                   </div>
