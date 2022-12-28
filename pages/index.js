@@ -128,14 +128,14 @@ export default function Home() {
         </section>
       </div>
 
-      <div className="container">
+      <div>
         <section className="text-gray-400 body-font bg-gray-900">
           <div className="container px-5 py-24 mx-auto">
             <div className="flex flex-wrap w-full mb-20 flex-col items-center text-center">
               <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-white">GO SHOPPING 🛍</h1>
               <p className="lg:w-1/2 w-full leading-relaxed text-opacity-80">You are going to see variaty of products here.</p>
             </div>
-            <div className="flex flex-wrap -m-4">
+            <div className="flex flex-wrap justify-center items-center -m-4">
               <div className="xl:w-1/3 md:w-1/2 p-4">
                 <div className="border border-gray-700 border-opacity-75 p-6 text-center">
                   <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-gray-800 text-purple-400 mb-4">
