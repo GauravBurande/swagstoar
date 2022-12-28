@@ -41,7 +41,7 @@ const Myaccount = ({ toggleCart, user }) => {
 
     return (
         <div>
-            <div className="container">
+            <div>
                 <section className="text-gray-400 body-font bg-gray-900">
                     <div className="container px-5 py-24 mx-auto">
                         <div className="flex flex-wrap w-full mb-20 flex-col items-center text-center">
