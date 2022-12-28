@@ -37,10 +37,10 @@ export default function Home() {
       <div className="max-w-[100vw] h-[30vh] md:h-[35rem] relative group">
         <div style={{ backgroundImage: `url(${slides[currentIndex].url})` }} className="w-full h-full bg-center bg-cover transition-all duration-500" />
         <div onClick={prevSlide}>
-          <BsArrowLeftCircleFill className="text-2xl text-white hover:text-[2rem] md:text-5xl hidden group-hover:block hover:text-purple-500 transition-all md:hover:text-[3.5rem] absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 cursor-pointer" />
+          <BsArrowLeftCircleFill className="text-2xl text-white hover:text-[2rem] md:text-5xl md:hidden group-hover:block hover:text-purple-500 transition-all md:hover:text-[3.5rem] absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 cursor-pointer" />
         </div>
         <div onClick={nextSlide}>
-          <BsArrowRightCircleFill className="text-2xl text-white hover:text-[2rem] md:text-5xl hidden group-hover:block hover:text-purple-500 transition-all md:hover:text-[3.5rem] absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 cursor-pointer" />
+          <BsArrowRightCircleFill className="text-2xl text-white hover:text-[2rem] md:text-5xl md:hidden group-hover:block hover:text-purple-500 transition-all md:hover:text-[3.5rem] absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 cursor-pointer" />
         </div>
       </div>
 
