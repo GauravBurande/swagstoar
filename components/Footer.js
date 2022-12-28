@@ -61,7 +61,7 @@ const Footer = () => {
               <Image src="/logo.png" width={50} height={50} alt="Swagstoar" />
               <span className="ml-3 text-xl">SWAGSTOAR</span>
             </Link>
-            <p className="text-sm text-gray-400 sm:ml-6 sm:mt-0 mt-4">© 20222-23 Swagstoar  |  Built with ❤ by
+            <p className="text-sm text-gray-400 sm:ml-6 sm:mt-0 mt-4">© 2022-23 Swagstoar  |  Built with ❤ by
               <Link href="https://twitter.com/gauravvan" className="text-gray-500 ml-1 hover:text-purple-500" target="_blank" rel="noopener noreferrer">@gauravvan</Link>
             </p>
             <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
