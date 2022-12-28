@@ -84,7 +84,7 @@ const Orders = () => {
                                                             {orderItem.address}
                                                         </td>
                                                         <td className="text-sm font-light px-6 py-4 whitespace-nowrap">
-                                                            {orderItem.amount}
+                                                            ${orderItem.amount}.00
                                                         </td>
                                                         <td className="text-sm text-blue-500 cursor-pointer font-light px-6 py-4 whitespace-nowrap">
                                                             <Link href={'/order?id=' + orderItem._id}>View</Link>
