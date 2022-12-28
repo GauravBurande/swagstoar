@@ -23,6 +23,17 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
+    toast('Please wait...', {
+      position: "top-left",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+
     let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/signup`, {
       method: 'POST',
       headers: {
