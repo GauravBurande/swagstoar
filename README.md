@@ -2,6 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 # Here's how I built this webapp using react, mongoDB, nodeJs and express, basically MENN stack. Also, I used tailwindCss for styling.
 ### You can visit the webapp here: [swagstoar.vercel.app](http://swagstoar.vercel.app/)
+This webapp took about a month to build.
 
 After learning #ReactJS, I decided to learn #tailwindcss. So, I made a Facebook login clone for some practice while searching through tailwindcss' docs.
 I built a webapp to save notes after learning react, you can visit the webapp here: [https://use-noted.netlify.app/login](https://use-noted.netlify.app/login)
