@@ -50,6 +50,6 @@ I was thinking to use the pure-react-carousel package but instead, I uninstalled
 
 I did not had any idea how to design the home page for swagstoar, I looked at some other sites and designed the home page by looking at other similar sites. I still had some UI issues, I fixed them later when I found them. I also needed to add hats and tshirt products to the mongoDB database.
 
-the app was all ready to be deployed. I created a free cluster on mongoDB Atlas. Then created a vercel account, and linked my GitHub account to vercel. added MongoDB URI string as an env variable and other variables. I did had some errors while deploying. I looked at the build logs, the error was due to an unused API, I deleted that file and redeployed it. After the site was live I created some users, and added products to the database by using the addproducts API.
+The app was all ready to be deployed. I created a free cluster on mongoDB Atlas. Then created a vercel account, and linked my GitHub account to vercel. added MongoDB URI string as an env variable and other variables. I did had some errors while deploying. I looked at the build logs, the error was due to an unused API, I deleted that file and redeployed it. After the site was live I created some users, and added products to the database by using the addproducts API.
 Then I opened the webapp on the phone, and while surfing on my webapp I realised there are some issues with the UI and some other issues, which I fixed quickly.
 And then I shut down the laptop.
