@@ -1,0 +1,248 @@
+{
+ "title": "title",
+ "slug": "slug",
+ "description": "desc",
+ "image": "img",
+ "category": "hat",
+ "size": "XL",
+ "color": "black",
+ "price": 25,
+ "availableQty": 20
+},
+
+
+
+HOODIE
+[
+{
+ "title": "Cache Cow Pullover",
+ "slug": "cache-cow-pullover",
+ "description": "A sturdy and warm sweatshirt bound to keep you warm in the colder months. A pre-shrunk, classic fit sweater that's made with air-jet spun yarn for a soft feel.",
+ "image": "https://cdn.shopify.com/s/files/1/1056/4958/products/mockup-98441539_1024x1024.jpg?v=1527664912",
+ "category": "hoodie",
+ "size": "XL",
+ "color": "black",
+ "price": 35,
+ "availableQty": 20
+},
+{
+ "title": "Coding Ninja Retro 80's Style Pullover",
+ "slug": "coding-ninja",
+ "description": "A sturdy and warm sweatshirt bound to keep you warm in the colder months. A pre-shrunk, classic fit sweater that's made with air-jet spun yarn for a soft feel.",
+ "image": "https://cdn.shopify.com/s/files/1/1056/4958/products/mockup-65d79463_1024x1024.jpg?v=1527093586",
+ "category": "hoodie",
+ "size": "XL",
+ "color": "white",
+ "price": 35,
+ "availableQty": 20
+},
+{
+ "title": "Hustle Pullover",
+ "slug": "hustle-pullover",
+ "description": "A sturdy and warm sweatshirt bound to keep you warm in the colder months. A pre-shrunk, classic fit sweater that's made with air-jet spun yarn for a soft feel.",
+ "image": "https://cdn.shopify.com/s/files/1/1056/4958/products/mockup-5b430a6b_1024x1024.jpg?v=1529125709",
+ "category": "hoodie",
+ "size": "XL",
+ "color": "white",
+ "price": 35,
+ "availableQty": 20
+},
+{
+ "title": "Learn To Code Retro 80's Theme Pullover",
+ "slug": "learn-to-code",
+ "description": "A sturdy and warm sweatshirt bound to keep you warm in the colder months. A pre-shrunk, classic fit sweater that's made with air-jet spun yarn for a soft feel.",
+ "image": "https://cdn.shopify.com/s/files/1/1056/4958/products/mockup-0e03044e_1024x1024.jpg?v=1527664988",
+ "category": "hoodie",
+ "size": "XL",
+ "color": "black",
+ "price": 35,
+ "availableQty": 20
+},
+{
+ "title": "Swifter Things Pullover",
+ "slug": "swifter-things",
+ "description": "A sturdy and warm sweatshirt bound to keep you warm in the colder months. A pre-shrunk, classic fit sweater that's made with air-jet spun yarn for a soft feel.",
+ "image": "https://cdn.shopify.com/s/files/1/1056/4958/products/mockup-15f1adfb_1024x1024.jpg?v=1527665022",
+ "category": "hoodie",
+ "size": "XL",
+ "color": "black",
+ "price": 35,
+ "availableQty": 20
+},
+{
+ "title": "Incognito Pullover",
+ "slug": "incognito-pullover",
+ "description": "A sturdy and warm sweatshirt bound to keep you warm in the colder months. A pre-shrunk, classic fit sweater that's made with air-jet spun yarn for a soft feel.",
+ "image": "https://cdn.shopify.com/s/files/1/1056/4958/products/mockup-fe9986a8_1024x1024.jpg?v=1529125764",
+ "category": "hoodie",
+ "size": "XL",
+ "color": "black",
+ "price": 35,
+ "availableQty": 20
+},
+{
+ "title": "Coding Wormhole Pullover",
+ "slug": "coding-wormhole",
+ "description": "A sturdy and warm sweatshirt bound to keep you warm in the colder months. A pre-shrunk, classic fit sweater that's made with air-jet spun yarn for a soft feel.",
+ "image": "https://cdn.shopify.com/s/files/1/1056/4958/products/mockup-d1e667e1_1024x1024.jpg?v=1527093599",
+ "category": "hoodie",
+ "size": "XL",
+ "color": "blue",
+ "price": 35,
+ "availableQty": 20
+},
+{
+ "title": "Code Every Day Gradient Pullover",
+ "slug": "code-everyday",
+ "description": "A sturdy and warm sweatshirt bound to keep you warm in the colder months. A pre-shrunk, classic fit sweater that's made with air-jet spun yarn for a soft feel.",
+ "image": "https://cdn.shopify.com/s/files/1/1056/4958/products/mockup-cb8293c8_1024x1024.jpg?v=1527093960",
+ "category": "hoodie",
+ "size": "XL",
+ "color": "black",
+ "price": 35,
+ "availableQty": 20
+}
+]
+
+TSHIRTS
+
+[
+  {
+ "title": "Womens Code Romantic T-Shirt",
+ "slug": "you-had-me-at-hello-world",
+ "description": "Your typical 100% cotton t-shirt (except for heather colors, which contain 10% polyester). Pre-shrunk to make sure your size is maintained throughout several washes, and a classic fit.",
+ "image": "https://cdn.shopify.com/s/files/1/1056/4958/products/mockup-5e11cd1d_1024x1024.jpg?v=1527665031",
+ "category": "tshirt",
+ "size": "XL",
+ "color": "black",
+ "price": 18,
+ "availableQty": 20
+},
+{
+ "title": "Devslopes NES Game T-Shirt",
+ "slug": "devslopes-nes-game-t-shirt",
+ "description": "This super-soft, baby-knit t-shirt looks great on both men and women – it fits like a well-loved favorite. Made from 100% cotton, except for heather colors, which contain polyester.",
+ "image": "https://cdn.shopify.com/s/files/1/1056/4958/products/mockup-2e0627b5_1024x1024.jpg?v=1526736880",
+ "category": "tshirt",
+ "size": "XL",
+ "color": "black",
+ "price": 18,
+ "availableQty": 20
+},
+{
+ "title": "Breaking Code QA Testing – T-Shirt",
+ "slug": "breaking-code-qa-testing-t-shirt",
+ "description": "Inspired by the popular TV series,Breaking Code is the perfect uniform for QA Testing. This super-soft, baby-knit t-shirt looks great on both men and women – it fits like a well-loved favorite. Made from 100% cotton, except for heather colors, which contain polyester.",
+ "image": "https://cdn.shopify.com/s/files/1/1056/4958/products/mockup-797b7fc5_1024x1024.jpg?v=1527664906",
+ "category": "tshirt",
+ "size": "XL",
+ "color": "white",
+ "price": 18,
+ "availableQty": 20
+},
+{
+ "title": "Crash Overflow (Light) T-Shirt",
+ "slug": "crash-overflow-light-t-shirt",
+ "description": "This super-soft, baby-knit t-shirt looks great on both men and women – it fits like a well-loved favorite. Made from 100% cotton, except for heather colors, which contain polyester.",
+ "image": "https://cdn.shopify.com/s/files/1/1056/4958/products/mockup-44d57edb_1024x1024.jpg?v=1526736790",
+ "category": "tshirt",
+ "size": "XL",
+ "color": "white",
+ "price": 18,
+ "availableQty": 20
+},
+{
+ "title": "Womens Developer Cursive T-Shirt",
+ "slug": "womens-developer-cursive-t-shirt-1",
+ "description": "Your typical 100% cotton t-shirt (except for heather colors, which contain 10% polyester). Pre-shrunk to make sure your size is maintained throughout several washes, and a classic fit.",
+ "image": "https://cdn.shopify.com/s/files/1/1056/4958/products/mockup-a1f5677b_1024x1024.jpg?v=1527665032",
+ "category": "tshirt",
+ "size": "XL",
+ "color": "black",
+ "price": 18,
+ "availableQty": 20
+},
+{
+ "title": "Nerdvana Rock Band T-Shirt",
+ "slug": "nerdvana-rock-band-t-shirt",
+ "description": "This super-soft, baby-knit t-shirt looks great on both men and women – it fits like a well-loved favorite. Made from 100% cotton, except for heather colors, which contain polyester.",
+ "image": "https://cdn.shopify.com/s/files/1/1056/4958/products/mockup-9c1867b6_1024x1024.jpg?v=1527664995",
+ "category": "tshirt",
+ "size": "XL",
+ "color": "gray",
+ "price": 18,
+ "availableQty": 20
+},
+{
+ "title": "Devslopes AF Baseball Tee",
+ "slug": "devslopes-af-baseball-tee",
+ "description": "This super-soft, baby-knit t-shirt looks great on both men and women – it fits like a well-loved favorite. Made from 100% cotton, except for heather colors, which contain polyester.",
+ "image": "https://cdn.shopify.com/s/files/1/1056/4958/products/mockup-b2c1afd6_1024x1024.jpg?v=1526736829",
+ "category": "tshirt",
+ "size": "XL",
+ "color": "white",
+ "price": 18,
+ "availableQty": 20
+},
+{
+ "title": "O'RLY? Forgetful Developer T-Shirt",
+ "slug": "orly-forgetful-developer-t-shirt",
+ "description": "This super-soft, baby-knit t-shirt looks great on both men and women – it fits like a well-loved favorite. Made from 100% cotton, except for heather colors, which contain polyester.",
+ "image": "https://cdn.shopify.com/s/files/1/1056/4958/products/mockup-9987c01f_1024x1024.jpg?v=1527665005",
+ "category": "tshirt",
+ "size": "XL",
+ "color": "white",
+ "price": 18,
+ "availableQty": 20
+}
+]
+
+HATS
+[
+  {
+ "title": "Backend Developer Status Update Trucker Hat",
+ "slug": "backend-developer-status-update-trucker-hat",
+ "description": "Classic trucker cap style with a cool fabric blend.",
+ "image": "https://cdn.shopify.com/s/files/1/1056/4958/products/mockup-985f2b92_1024x1024.jpg?v=1527664895",
+ "category": "hat",
+ "size": "XL",
+ "color": "black",
+ "price": 25,
+ "availableQty": 20
+},
+{
+ "title": "Ethereum Flexfit Cap",
+ "slug": "ethereum-flexfit-cap",
+ "description": "Available in two sizes with an elastic stretch band, this hat is a sure winner in comfort! It has an athletic shape with a curved visor.",
+ "image": "https://cdn.shopify.com/s/files/1/1056/4958/products/mockup-abcab8ea_1024x1024.jpg?v=1527664964",
+ "category": "hat",
+ "size": "XL",
+ "color": "black",
+ "price": 25,
+ "availableQty": 20
+},
+{
+ "title": "Hustle Snapback Hat",
+ "slug": "hustle-snapback-hat",
+ "description": "This is the snapback of your dreams! It's structured and high-profile, with a flat visor and a subtle grey under visor.",
+ "image": "https://cdn.shopify.com/s/files/1/1056/4958/products/mockup-722bc72e_1024x1024.jpg?v=1529125711",
+ "category": "hat",
+ "size": "XL",
+ "color": "black",
+ "price": 25,
+ "availableQty": 20
+},
+{
+ "title": "Dope Snapback Hat",
+ "slug": "dope-snapback-hat",
+ "description": "This is the snapback of your dopest dreams! It's structured and high-profile, with a flat visor and a subtle grey under visor.",
+ "image": "https://cdn.shopify.com/s/files/1/1056/4958/products/mockup-2158397a_1024x1024.jpg?v=1529125608",
+ "category": "hat",
+ "size": "XL",
+ "color": "black",
+ "price": 25,
+ "availableQty": 20
+}
+]
+
+ 

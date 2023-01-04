@@ -126,11 +126,24 @@ function MyApp({ Component, pageProps }) {
   }
 
   const buyNow = (itemCode, qty, price, name, size, variant) => {
-    let newCart = {};
-    newCart[itemCode] = { qty: 1, price, name, size, variant }
-    setCart(newCart)
-    saveCart(newCart)
-    router.push('/checkout')
+    if (user.email) {
+      let newCart = {};
+      newCart[itemCode] = { qty: 1, price, name, size, variant }
+      setCart(newCart)
+      saveCart(newCart)
+      router.push('/checkout')
+    } else {
+      toast('Please Sign In first.', {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    }
   }
 
   const signout = () => {
