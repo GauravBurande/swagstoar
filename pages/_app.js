@@ -180,7 +180,6 @@ function MyApp({ Component, pageProps }) {
        content="ecommerce, swagstoar, swag, hackathon"
         />
     
-         <!-- Twitter -->
     <meta property="twitter:card" content="swagstoar"/>
     <meta property="twitter:url" content="https://swagstoar.vercel.app/">
     <meta property="twitter:title" content="for developers, by developers"/>
