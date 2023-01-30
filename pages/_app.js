@@ -171,8 +171,21 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>Swagstoar - for developers. by developers.</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Swagstoar.vercel.app - wear code t-shirts and more" />
         <link rel="icon" href="/favicon.ico" />
+        
+        <meta
+       name="keywords"
+       content="ecommerce, swagstoar, swag, hackathon"
+        />
+    
+         <!-- Twitter -->
+    <meta property="twitter:card" content="swagstoar"/>
+    <meta property="twitter:url" content="https://swagstoar.vercel.app/">
+    <meta property="twitter:title" content="for developers, by developers"/>
+    <meta property="twitter:description" content="buy tshirts, pull overs and hats swag for your hackathons"/>
+    <meta property="twitter:image" content="https://swagstoar.vercel.app/_next/image?url=%2Flogo.png&w=64&q=75"/>
       </Head>
 
       <LoadingBar
