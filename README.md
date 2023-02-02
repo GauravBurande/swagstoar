@@ -4,7 +4,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ### You can visit the webapp here: [swagstoar.vercel.app](http://swagstoar.vercel.app/)
 This webapp took about a month to build.
 
-After learning #ReactJS, I decided to learn #tailwindcss. So, I made a Facebook login clone for some practice while searching through tailwindcss' docs.
+One more thing to add here, the webapp will feel slow sometimes whenever there's fetching data from database due to using the free tier of mongodb atlas and long distance database.
+
+After learning ReactJS, I decided to learn #tailwindcss. So, I made a Facebook login clone for some practice while searching through tailwindcss' docs.
 I built a webapp to save notes after learning react, you can visit the webapp here: [https://use-noted.netlify.app/login](https://use-noted.netlify.app/login)
 Then I started learning NextJs, after getting a clear idea of how nextJs is like a production framework for react. I started building this webapp.
 
@@ -53,4 +55,4 @@ I did not had any idea how to design the home page for swagstoar, I looked at so
 
 The app was all ready to be deployed. I created a free cluster on mongoDB Atlas. Then created a vercel account, and linked my GitHub account to vercel. added MongoDB URI string as an env variable and other variables. I did had some errors while deploying. I looked at the build logs, the error was due to an unused API, I deleted that file and redeployed it. After the site was live I created some users, and added products to the database by using the addproducts API.
 Then I opened the webapp on the phone, and while surfing on my webapp I realised there are some issues with the UI and some other issues, which I fixed quickly.
-And then I shut down the laptop.
+Don't forget to leave a feedback.
